@@ -2,8 +2,6 @@ export { Button } from './Button';
 export type { ButtonProps } from './Button';
 export { Card } from './Card';
 export type { CardProps } from './Card';
-export { GlassCard } from './GlassCard';
-export type { GlassCardProps } from './GlassCard';
 export { SectionWrapper } from './SectionWrapper';
 export type { SectionWrapperProps } from './SectionWrapper';
 export { Container } from './Container';

@@ -5,7 +5,6 @@ import {
 } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { Card } from '../components/ui/Card';
-import { GlassCard } from '../components/ui/GlassCard';
 import { SectionWrapper } from '../components/ui/SectionWrapper';
 import { IconWrapper } from '../components/ui/IconWrapper';
 import { IconLabelPair } from '../components/ui/IconLabelPair';
@@ -116,10 +115,6 @@ export function Playground() {
             <p className="text-body-sm text-cream/70 font-sans">Inverted surface for featured CTAs.</p>
           </Card>
         </div>
-        <GlassCard className="p-card-p max-w-md">
-          <h3 className="text-heading-sm font-serif text-maroon mb-1">GlassCard</h3>
-          <p className="text-body-sm text-charcoal/70 font-sans">rounded-card-lg, backdrop-blur, shadow-card-md. Used by Navigation Funnel.</p>
-        </GlassCard>
         <div className="mt-card-gap">
           <p className="text-label text-charcoal/50 mb-3 font-sans uppercase tracking-wider">Animated Cards (scroll into view)</p>
           <div className="grid grid-cols-3 gap-card-gap">

@@ -1,6 +1,7 @@
 import { Linkedin, Instagram, Youtube, Twitter, Facebook, Smartphone, FileText, Image, Mail, MapPin, ExternalLink } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { footerColumns } from '../../data/navigation';
+import { scrollToSection } from '../../lib/utils';
 import departmentLogo from '../../assets/images/department-Logo.png';
 
 const socialIcons = [
@@ -18,12 +19,13 @@ const socialIcons = [
 
 const contactItems = [
   { label: 'Email', value: 'computer.science.byc@christuniversity.in' },
-  { label: 'Phone', value: '+91 80 4012 9600' },
-  { label: 'Address', value: 'Yeshwantpur Campus, Bangalore - 560073' },
+  { label: 'Phone', value: '+91 806989 6666' },
+  { label: 'Address', value: 'Bangalore Yeshwanthpur Campus, Nagasandra, Near Tumkur Road, Bangalore, Karnataka-560073' },
 ];
 
 export function Footer() {
   const navigate = useNavigate();
+  const location = useLocation();
 
   return (
     <footer aria-label="Site footer" className="bg-gradient-to-b from-charcoal to-charcoal-dark text-white/70">
@@ -92,7 +94,20 @@ export function Footer() {
                       </a>
                     ) : (
                       <button
-                        onClick={() => { navigate(link.href); window.scrollTo({ top: 0, behavior: 'instant' }); }}
+                        onClick={() => {
+                          if (link.href.includes('#')) {
+                            const hash = link.href.split('#')[1];
+                            if (location.pathname !== '/') {
+                              navigate('/');
+                              setTimeout(() => scrollToSection(hash), 100);
+                            } else {
+                              scrollToSection(hash);
+                            }
+                          } else {
+                            navigate(link.href);
+                            window.scrollTo({ top: 0, behavior: 'instant' });
+                          }
+                        }}
                         className="text-sm font-sans text-white/40 hover:text-gold transition-colors duration-250 focus-visible:outline-none focus-visible:text-gold"
                       >
                         {link.label}

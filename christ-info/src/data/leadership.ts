@@ -13,6 +13,7 @@ export interface Leader {
   imageUrl?: string;
   isLeadership?: boolean;
   excludeFromFaculty?: boolean;
+  note?: string;
 }
 
 function initials(name: string): string {
@@ -96,6 +97,7 @@ const otherFaculty = rawData.faculty.filter(f =>
   imageUrl: f.image || undefined,
   isLeadership: false,
   excludeFromFaculty: false,
+  note: f.note,
 }));
 
 export const leaders: Leader[] = [

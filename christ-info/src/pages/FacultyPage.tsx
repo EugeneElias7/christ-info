@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Search, Linkedin, Mail, ExternalLink } from 'lucide-react'
+import { Search, Linkedin, Mail, ExternalLink, ClipboardList } from 'lucide-react'
 import { facultyOnly, leadershipTeam } from '../data/leadership'
 import { getMotionVariants, fadeInUp, staggerContainer } from '../lib/animations'
 
@@ -20,10 +20,10 @@ function FacultyCard({ faculty }: { faculty: typeof facultyOnly[0] }) {
           <img
             src={faculty.imageUrl}
             alt={faculty.name}
-            className="aspect-[3/4] w-full object-cover transition-transform duration-350 ease-smooth group-hover:scale-105"
+            className="aspect-[4/5] w-full object-cover transition-transform duration-350 ease-smooth group-hover:scale-105"
           />
         ) : (
-          <div className="aspect-[3/4] bg-gradient-to-br from-charcoal via-charcoal-mid to-charcoal/90 flex items-center justify-center transition-transform duration-350 ease-smooth group-hover:scale-105">
+          <div className="aspect-[4/5] bg-gradient-to-br from-charcoal via-charcoal-mid to-charcoal/90 flex items-center justify-center transition-transform duration-350 ease-smooth group-hover:scale-105">
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,160,23,0.06),transparent_60%)]" />
             <span className="text-2xl font-serif font-bold text-white/10 tracking-wider select-none">{faculty.imagePlaceholder}</span>
           </div>
@@ -36,37 +36,46 @@ function FacultyCard({ faculty }: { faculty: typeof facultyOnly[0] }) {
           'absolute inset-0 flex items-center justify-center',
           'opacity-0 group-hover:opacity-100 transition-opacity duration-300',
         ].join(' ')}>
-          <span className="flex items-center gap-2 px-3 py-1.5 rounded-card bg-gold text-maroon-dark text-[11px] font-sans font-semibold shadow-lg translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-            View Profile <ExternalLink size={12} strokeWidth={1.5} />
+          <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-card bg-gold text-maroon-dark text-[10px] font-sans font-semibold shadow-lg translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+            View Profile <ExternalLink size={10} strokeWidth={1.5} />
           </span>
         </div>
       </div>
 
-      <div className="p-3">
-        <p className="text-sm font-sans font-semibold text-charcoal leading-snug truncate">{faculty.name}</p>
-        <p className="text-[11px] font-sans text-charcoal/50 truncate mt-0.5">{faculty.designation}</p>
+      <div className="p-2.5">
+        <p className="text-xs font-sans font-semibold text-charcoal leading-snug truncate">{faculty.name}</p>
+        <p className="text-[10px] font-sans text-charcoal/50 truncate mt-0.5">{faculty.designation}</p>
 
-              <div className="flex items-center gap-1.5 mt-2.5 pt-2.5 border-t border-cream-border">
+        {faculty.note && (
+          <div className="mt-2 pt-2 border-t border-dashed border-gold/20">
+            <div className="flex items-start gap-1.5">
+              <ClipboardList size={11} strokeWidth={1.5} className="text-gold/60 mt-0.5 shrink-0" />
+              <p className="text-[9px] font-sans text-charcoal/50 leading-relaxed">{faculty.note}</p>
+            </div>
+          </div>
+        )}
+
+              <div className="flex items-center gap-1.5 mt-2 pt-2 border-t border-cream-border">
                 {faculty.linkedin && (
                   <a
                     href={faculty.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={(e) => e.stopPropagation()}
-                    className="inline-flex items-center gap-1 px-2 py-1 rounded bg-blue-600 text-white text-[9px] font-sans font-medium leading-none hover:bg-blue-700 transition-colors"
+                    className="inline-flex items-center gap-1 px-2 py-1 rounded bg-blue-600 text-white text-[8px] font-sans font-medium leading-none hover:bg-blue-700 transition-colors"
                     aria-label={`${faculty.name} on LinkedIn`}
                   >
-                    <Linkedin size={9} strokeWidth={1.5} /> LinkedIn
+                    <Linkedin size={8} strokeWidth={1.5} /> LinkedIn
                   </a>
                 )}
                 {faculty.emailLink && (
                   <a
                     href={faculty.emailLink}
                     onClick={(e) => e.stopPropagation()}
-                    className="inline-flex items-center gap-1 px-2 py-1 rounded bg-gold/10 text-[9px] font-sans font-medium leading-none text-gold/70 hover:bg-gold hover:text-maroon-dark transition-all"
+                    className="inline-flex items-center gap-1 px-2 py-1 rounded bg-gold/10 text-[8px] font-sans font-medium leading-none text-gold/70 hover:bg-gold hover:text-maroon-dark transition-all"
                     aria-label={`Email ${faculty.name}`}
                   >
-                    <Mail size={9} strokeWidth={1.5} /> Email
+                    <Mail size={8} strokeWidth={1.5} /> Email
                   </a>
                 )}
               </div>
@@ -251,7 +260,7 @@ export function FacultyPage() {
             <h2 className="text-heading font-serif text-maroon mb-4">All Faculty</h2>
           )}
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2.5">
             {filtered.map((faculty) => (
               <FacultyCard key={faculty.id} faculty={faculty} />
             ))}

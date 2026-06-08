@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Linkedin, Mail, ExternalLink } from 'lucide-react';
+import { Linkedin, Mail, ExternalLink, ClipboardList } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { SectionWrapper } from '../ui/SectionWrapper';
 import { getMotionVariants, fadeInUp, staggerContainer, viewportLazy } from '../../lib/animations';
@@ -16,10 +16,18 @@ function FacultyCard({ faculty }: { faculty: typeof facultyOnly[0] }) {
     >
       {/* Image area */}
       <div className="relative overflow-hidden">
-        <div className="aspect-[3/4] bg-gradient-to-br from-charcoal via-charcoal-mid to-charcoal/90 flex items-center justify-center transition-transform duration-350 ease-smooth group-hover:scale-105">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,160,23,0.06),transparent_60%)]" />
-          <span className="text-2xl font-serif font-bold text-white/10 tracking-wider select-none">{faculty.imagePlaceholder}</span>
-        </div>
+        {faculty.imageUrl ? (
+          <img
+            src={faculty.imageUrl}
+            alt={faculty.name}
+            className="aspect-[3/4] w-full object-cover transition-transform duration-350 ease-smooth group-hover:scale-105"
+          />
+        ) : (
+          <div className="aspect-[3/4] bg-gradient-to-br from-charcoal via-charcoal-mid to-charcoal/90 flex items-center justify-center transition-transform duration-350 ease-smooth group-hover:scale-105">
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,160,23,0.06),transparent_60%)]" />
+            <span className="text-2xl font-serif font-bold text-white/10 tracking-wider select-none">{faculty.imagePlaceholder}</span>
+          </div>
+        )}
 
         {/* Maroon overlay on hover */}
         <div className="absolute inset-0 bg-gradient-to-t from-maroon/80 via-maroon/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -42,6 +50,15 @@ function FacultyCard({ faculty }: { faculty: typeof facultyOnly[0] }) {
       <div className="p-3">
         <p className="text-sm font-sans font-semibold text-charcoal leading-snug truncate">{faculty.name}</p>
         <p className="text-[11px] font-sans text-charcoal/50 truncate mt-0.5">{faculty.designation}</p>
+
+        {faculty.note && (
+          <div className="mt-2 pt-2 border-t border-dashed border-gold/20">
+            <div className="flex items-start gap-1.5">
+              <ClipboardList size={11} strokeWidth={1.5} className="text-gold/60 mt-0.5 shrink-0" />
+              <p className="text-[9px] font-sans text-charcoal/50 leading-relaxed">{faculty.note}</p>
+            </div>
+          </div>
+        )}
 
         <div className="flex items-center gap-1.5 mt-2.5 pt-2.5 border-t border-cream-border">
           {faculty.linkedin && (

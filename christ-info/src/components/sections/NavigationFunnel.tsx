@@ -28,12 +28,15 @@ export function NavigationFunnel() {
           {/* CHRIST University card */}
           <motion.div variants={getMotionVariants(fadeInUp)} className="md:col-span-1">
             <div className="bg-white border border-cream-border rounded-card-lg shadow-card-white overflow-hidden h-full flex flex-col">
-              <div className="relative h-48 lg:h-56 bg-gradient-to-br from-charcoal via-charcoal-mid to-charcoal/80 overflow-hidden">
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,160,23,0.08),transparent_60%)]" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-5xl font-serif font-bold text-white/5 tracking-[0.2em]">CHRIST</span>
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/30 to-transparent" />
+              <div className="relative h-48 lg:h-56 overflow-hidden">
+                <img
+                  src="https://christuniversity.in/uploads/banners/banner/1085904560_2026-05-07_12-50-42.png"
+                  alt="CHRIST University"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-black/40" />
+                <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/50 to-transparent" />
               </div>
               <div className="p-card-p flex flex-col flex-1">
                 <p className="text-eyebrow font-sans text-gold tracking-widest uppercase mb-1">Explore</p>
@@ -56,12 +59,15 @@ export function NavigationFunnel() {
           {/* Yeshwantpur Campus card */}
           <motion.div variants={getMotionVariants(fadeInUp)} className="md:col-span-1">
             <div className="bg-white border border-cream-border rounded-card-lg shadow-card-white overflow-hidden h-full flex flex-col">
-              <div className="relative h-48 lg:h-56 bg-gradient-to-br from-charcoal via-charcoal-mid to-charcoal/80 overflow-hidden">
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,160,23,0.08),transparent_60%)]" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-sm font-sans text-white/10 tracking-[0.3em] uppercase">Yeshwantpur</span>
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/30 to-transparent" />
+              <div className="relative h-48 lg:h-56 overflow-hidden">
+                <img
+                  src="https://byc.christuniversity.in/images/byc-campus.webp"
+                  alt="Yeshwantpur Campus"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-black/40" />
+                <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/50 to-transparent" />
               </div>
               <div className="p-card-p flex flex-col flex-1">
                 <p className="text-eyebrow font-sans text-gold tracking-widest uppercase mb-1">Explore</p>
