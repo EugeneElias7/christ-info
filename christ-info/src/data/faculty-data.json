@@ -93,7 +93,7 @@
         "faculty"
       ],
       "specializations": [],
-      "image": ""
+      "image": "https://christuniversity.in/uploads/faculty-image/E5844.jpg"
     },
     {
       "facultyId": 3526,
@@ -110,7 +110,7 @@
         "faculty"
       ],
       "specializations": [],
-      "image": ""
+      "image": "https://christuniversity.in/uploads/faculty-image/E5934.jpg"
     },
     {
       "facultyId": 3529,
@@ -127,7 +127,7 @@
         "faculty"
       ],
       "specializations": [],
-      "image": ""
+      "image": "https://christuniversity.in/uploads/faculty-image/E5932.jpg"
     },
     {
       "facultyId": 3535,
@@ -148,7 +148,7 @@
         "Machine Learning",
         "Artificial Intelligence"
       ],
-      "image": ""
+      "image": "https://christuniversity.in/uploads/faculty-image/E5926.jpg"
     },
     {
       "facultyId": 3543,
@@ -168,7 +168,7 @@
         "Artificial Intelligence",
         "Nature Inspired Algorithms"
       ],
-      "image": ""
+      "image": "https://christuniversity.in/uploads/faculty-image/E5945.jpg"
     },
     {
       "facultyId": 3544,
@@ -202,7 +202,7 @@
         "faculty"
       ],
       "specializations": [],
-      "image": ""
+      "image": "https://christuniversity.in/uploads/faculty-image/E5985.jpg"
     },
     {
       "facultyId": 3641,
@@ -219,7 +219,7 @@
         "faculty"
       ],
       "specializations": [],
-      "image": ""
+      "image": "https://christuniversity.in/uploads/faculty-image/E6190.jpg"
     },
     {
       "facultyId": 3648,
@@ -236,7 +236,7 @@
         "faculty"
       ],
       "specializations": [],
-      "image": ""
+      "image": "https://christuniversity.in/uploads/faculty-image/E6200.jpg"
     },
     {
       "facultyId": 3687,
@@ -301,7 +301,7 @@
         "Machine Learning",
         "Edge Computing"
       ],
-      "image": ""
+      "image": "https://christuniversity.in/uploads/faculty-image/E6844.jpg"
     },
     {
       "facultyId": 4037,
@@ -318,7 +318,7 @@
         "faculty"
       ],
       "specializations": [],
-      "image": ""
+      "image": "https://christuniversity.in/uploads/faculty-image/E6857.jpg"
     },
     {
       "facultyId": 4039,
@@ -340,7 +340,7 @@
         "Networking",
         "Artificial Intelligence"
       ],
-      "image": ""
+      "image": "https://christuniversity.in/uploads/faculty-image/E6846.jpg"
     },
     {
       "facultyId": 4059,
@@ -357,7 +357,7 @@
         "faculty"
       ],
       "specializations": [],
-      "image": ""
+      "image": "https://christuniversity.in/uploads/faculty-image/E6869.jpg"
     },
     {
       "facultyId": 4061,
@@ -391,7 +391,7 @@
         "faculty"
       ],
       "specializations": [],
-      "image": ""
+      "image": "https://christuniversity.in/uploads/faculty-image/E6900.jpg"
     },
     {
       "facultyId": 4176,
@@ -435,7 +435,7 @@
         "IoT",
         "Image and Video Analytics"
       ],
-      "image": ""
+      "image": "https://christuniversity.in/uploads/faculty-image/E8380.jpg"
     },
     {
       "facultyId": 4455,
@@ -456,7 +456,7 @@
         "Machine Learning",
         "Quantum Machine Learning"
       ],
-      "image": ""
+      "image": "https://christuniversity.in/uploads/faculty-image/E8384.jpg"
     },
     {
       "facultyId": 4506,
@@ -475,7 +475,7 @@
       "specializations": [
         "Machine Learning"
       ],
-      "image": ""
+      "image": "https://christuniversity.in/uploads/faculty-image/E8444.jpg"
     },
     {
       "facultyId": 4562,
@@ -492,7 +492,7 @@
         "faculty"
       ],
       "specializations": [],
-      "image": ""
+      "image": "https://christuniversity.in/uploads/faculty-image/E8508.jpg"
     },
     {
       "facultyId": 4568,
@@ -516,7 +516,7 @@
         "Soft Computing",
         "Natural Language Processing"
       ],
-      "image": ""
+      "image": "https://christuniversity.in/uploads/faculty-image/E8517.jpg"
     },
     {
       "facultyId": 4571,
@@ -539,7 +539,7 @@
         "cloud computing",
         "neural networks"
       ],
-      "image": ""
+      "image": "https://christuniversity.in/uploads/faculty-image/E8521.jpg"
     },
     {
       "facultyId": 4585,
@@ -556,7 +556,7 @@
         "faculty"
       ],
       "specializations": [],
-      "image": ""
+      "image": "https://christuniversity.in/uploads/faculty-image/E8539.jpg"
     },
     {
       "facultyId": 4595,
@@ -595,7 +595,7 @@
         "ML",
         "AI"
       ],
-      "image": ""
+      "image": "https://christuniversity.in/uploads/faculty-image/E8568.jpg"
     },
     {
       "facultyId": 4619,
@@ -617,7 +617,7 @@
         "Image Processing",
         "Artificial Intelligence"
       ],
-      "image": ""
+      "image": "https://christuniversity.in/uploads/faculty-image/E8590.jpg"
     },
     {
       "facultyId": 4712,
@@ -638,7 +638,7 @@
         "Deep learning",
         "Artificial Intelligence"
       ],
-      "image": ""
+      "image": "https://christuniversity.in/uploads/faculty-image/E8755.jpg"
     },
     {
       "facultyId": 4746,
@@ -655,7 +655,7 @@
         "faculty"
       ],
       "specializations": [],
-      "image": ""
+      "image": "https://kp.christuniversity.in/KnowledgePro/images/EmployeePhotos/E8814.jpg"
     },
     {
       "facultyId": 4804,
@@ -677,7 +677,7 @@
         "Data Analysis",
         "Data mining"
       ],
-      "image": ""
+      "image": "https://kp.christuniversity.in/KnowledgePro/images/EmployeePhotos/E8990.jpg"
     },
     {
       "facultyId": 4985,
@@ -698,7 +698,7 @@
         "Machine Learning",
         "Deep Learning"
       ],
-      "image": ""
+      "image": "https://kp.christuniversity.in/KnowledgePro/images/EmployeePhotos/E9294.jpg"
     },
     {
       "facultyId": 7034,
@@ -715,7 +715,7 @@
         "faculty"
       ],
       "specializations": [],
-      "image": ""
+      "image": "https://kp.christuniversity.in/KnowledgePro/images/EmployeePhotos/E9366.jpg"
     },
     {
       "facultyId": 7041,
@@ -732,7 +732,7 @@
         "faculty"
       ],
       "specializations": [],
-      "image": ""
+      "image": "https://kp.christuniversity.in/KnowledgePro/images/EmployeePhotos/E9353.jpg"
     },
     {
       "facultyId": 7050,
@@ -749,7 +749,7 @@
         "faculty"
       ],
       "specializations": [],
-      "image": ""
+      "image": "https://kp.christuniversity.in/KnowledgePro/images/EmployeePhotos/E9359.jpg"
     },
     {
       "facultyId": 7056,
@@ -766,7 +766,7 @@
         "faculty"
       ],
       "specializations": [],
-      "image": ""
+      "image": "https://kp.christuniversity.in/KnowledgePro/images/EmployeePhotos/E9365.jpg"
     },
     {
       "facultyId": 7126,
@@ -783,7 +783,7 @@
         "faculty"
       ],
       "specializations": [],
-      "image": ""
+      "image": "https://kp.christuniversity.in/KnowledgePro/images/EmployeePhotos/E9441.jpg"
     },
     {
       "facultyId": 7171,
@@ -800,7 +800,7 @@
         "faculty"
       ],
       "specializations": [],
-      "image": ""
+      "image": "https://kp.christuniversity.in/KnowledgePro/images/EmployeePhotos/E9520.jpg"
     },
     {
       "facultyId": 7207,
@@ -817,7 +817,7 @@
         "faculty"
       ],
       "specializations": [],
-      "image": ""
+      "image": "https://kp.christuniversity.in/KnowledgePro/images/EmployeePhotos/E9628.jpg"
     },
     {
       "facultyId": 7250,
@@ -834,7 +834,7 @@
         "faculty"
       ],
       "specializations": [],
-      "image": ""
+      "image": "https://kp.christuniversity.in/KnowledgePro/images/EmployeePhotos/E9793.jpg"
     },
     {
       "facultyId": 7504,
@@ -855,7 +855,7 @@
         "Artificial Intelligence",
         "Cloud Computing"
       ],
-      "image": ""
+      "image": "https://kp.christuniversity.in/KnowledgePro/images/EmployeePhotos/E10647.jpg"
     }
   ]
 }
