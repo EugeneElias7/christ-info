@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── GLOBAL CSS RESET & BASE ─────────────────────────────────────────────── */
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  /* Document */
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* Respect prefers-reduced-motion at CSS level */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Body defaults */
+  body {
+    @apply bg-cream text-charcoal font-sans;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Root mount — prevent any child from leaking horizontally */
+  #root {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Heading defaults — serif for h1–h4 */
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+
+  h5, h6 {
+    @apply font-sans;
+  }
+
+  /* Anchor reset */
+  a {
+    @apply no-underline;
+    color: inherit;
+  }
+
+  /* Image defaults — prevent any image from overflowing its container */
+  img {
+    @apply block max-w-full;
+    height: auto;
+  }
+
+  /* Focus indicator — visible and on-brand */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-gold ring-offset-2 ring-offset-cream;
+  }
+
+  /* Button reset */
+  button {
+    cursor: pointer;
+  }
+
+  /* SVG defaults */
+  svg {
+    @apply block;
+  }
+}
+
+/* ─── COMPONENT LAYER — REUSABLE CSS CLASSES ──────────────────────────────── */
+
+@layer components {
+  /* Section container — consistent horizontal padding across breakpoints */
+  .section-container {
+    @apply mx-auto w-full max-w-7xl px-section-x-sm sm:px-section-x-md lg:px-section-x;
+  }
+
+  /* Section vertical rhythm */
+  .section-spacing {
+    @apply py-section-y-sm lg:py-section-y;
+  }
+
+  /* Eyebrow label — "Welcome Christite" / section category labels */
+  .eyebrow-label {
+    @apply text-eyebrow font-sans font-medium tracking-widest uppercase text-maroon;
+  }
+
+  /* Gold decorative rule — thin horizontal divider with gold tint */
+  .gold-rule {
+    @apply block h-px w-12 bg-gold opacity-60;
+  }
+
+  /* Card base — thin border, soft shadow, restrained roundness */
+  .card-base {
+    @apply rounded-card bg-cream/60 border border-cream-border shadow-card backdrop-blur-glass;
+  }
+
+  /* Card interactive — adds hover transition */
+  .card-interactive {
+    @apply card-base transition-all duration-350 ease-editorial;
+    @apply hover:shadow-card-hover hover:-translate-y-1;
+  }
+
+  /* Maroon card — inverted for CTAs and featured items */
+  .card-maroon {
+    @apply rounded-card bg-maroon text-cream border border-maroon/20 shadow-card;
+  }
+
+  /* Glass surface — for overlapping elements */
+  .glass-surface {
+    @apply bg-white/60 backdrop-blur-glass border border-white/40;
+  }
+}
+
+/* ─── UTILITIES LAYER — ONE-OFF HELPERS ───────────────────────────────────── */
+
+@layer utilities {
+  /* Text balance for headings */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Horizontal scroll snap container */
+  .scroll-snap-x {
+    @apply overflow-x-auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .scroll-snap-x::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Snap child */
+  .snap-start-child {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+
+  /* Gold text gradient — sparingly for display headings */
+  .text-gold-shimmer {
+    background: linear-gradient(135deg, #D4A017 0%, #E8B84B 50%, #D4A017 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Maroon underline accent — for section headings */
+  .heading-underline {
+    @apply relative;
+  }
+  .heading-underline::after {
+    content: '';
+    @apply absolute left-0 -bottom-2 block h-px w-10 bg-gold opacity-70;
+  }
+
+  /* Section transition — subtle visual divider between sections */
+  .section-divider {
+    @apply block h-px w-full bg-gradient-to-r from-transparent via-cream-border to-transparent opacity-50;
+  }
+
+  /* Section contrast alternation — subtle background shifts */
+  .section-alt {
+    @apply bg-cream-muted/30;
+  }
+
+  /* Refined card border for premium feel */
+  .card-premium {
+    @apply border border-cream-border/70 shadow-sm;
+  }
+
+  /* Subtle gold accent bar — for featured section top borders */
+  .gold-accent-top {
+    @apply border-t-2 border-gold/20;
+  }
+
+  /* Elegant separator — thin gold line with spacing */
+  .separator-gold {
+    @apply block h-px w-full max-w-2xl mx-auto bg-gradient-to-r from-transparent via-gold/20 to-transparent;
+  }
+}

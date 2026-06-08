@@ -1,0 +1,861 @@
+{
+  "leadership": [
+    {
+      "id": "director",
+      "name": "Fr. Benny Thomas",
+      "designation": "Campus Director",
+      "email": "",
+      "emailLink": "",
+      "linkedin": "https://www.linkedin.com/in/benny-thomas-8a152b151/",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/MzQz/ODA0",
+      "image": "https://christuniversity.in/uploads/faculty-image/E343.jpg"
+    },
+    {
+      "id": "dean",
+      "name": "Dr. F. Joby Thomas",
+      "designation": "Campus Dean",
+      "email": "",
+      "emailLink": "",
+      "linkedin": "https://www.linkedin.com/in/joby-thomas-phd-277038aa/",
+      "christProfile": "https://christuniversity.in/business-and-management/faculty-details/MTU2/MzAx",
+      "image": "https://christuniversity.in/uploads/faculty-image/E156.jpg"
+    },
+    {
+      "id": "hod",
+      "name": "Vinay M",
+      "designation": "Head of Department",
+      "email": "vinay.m@christuniversity.in",
+      "emailLink": "mailto:vinay.m@christuniversity.in",
+      "linkedin": "https://in.linkedin.com/in/quickvinay",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/MTYx/ODA0",
+      "image": "https://christuniversity.in/uploads/faculty-image/E161.jpg"
+    }
+  ],
+  "faculty": [
+    {
+      "facultyId": 300,
+      "name": "Dayana David",
+      "slug": "dayana-david",
+      "designation": "CS Secretary, Office of Academic Support",
+      "gender": "Female",
+      "department": "CS-BYC",
+      "email": "dayana.david@christuniversity.in",
+      "emailLink": "mailto:dayana.david@christuniversity.in",
+      "christProfile": "",
+      "linkedin": "",
+      "roles": [
+        "adminassist"
+      ],
+      "specializations": [
+        "Machine Learning",
+        "Cloud Computing"
+      ],
+      "image": "https://kp.christuniversity.in/KnowledgePro/images/EmployeePhotos/E7469.jpg",
+      "note": "Contact for Yellow & Blue Forms"
+    },
+    {
+      "facultyId": 335,
+      "name": "Vinay M",
+      "slug": "vinay-m",
+      "designation": "Associate Professor",
+      "gender": "Male",
+      "department": "CS-BYC",
+      "email": "vinay.m@christuniversity.in",
+      "emailLink": "mailto:vinay.m@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/MTYx/ODA0",
+      "linkedin": "https://in.linkedin.com/in/quickvinay",
+      "roles": [
+        "faculty",
+        "hod"
+      ],
+      "specializations": [
+        "GenAI",
+        "ICT",
+        "Cloud Computing",
+        "Web Technology",
+        "Digital Learning",
+        "Semantic Web"
+      ],
+      "image": "https://christuniversity.in/uploads/faculty-image/E161.jpg"
+    },
+    {
+      "facultyId": 3463,
+      "name": "Ramkumar S",
+      "slug": "ramkumar-s",
+      "designation": "Associate Professor",
+      "gender": "Male",
+      "department": "CS-BYC",
+      "email": "ramkumar.s@christuniversity.in",
+      "emailLink": "mailto:ramkumar.s@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/NTg0NA==/ODA0",
+      "linkedin": "https://www.linkedin.com/in/ramkumar-sivasakthivel-4195a0121/",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [],
+      "image": "https://christuniversity.in/uploads/faculty-image/E5844.jpg"
+    },
+    {
+      "facultyId": 3526,
+      "name": "Siva Balan R V",
+      "slug": "siva-balan-r-v",
+      "designation": "Associate Professor",
+      "gender": "Male",
+      "department": "CS-BYC",
+      "email": "sivabalan.rv@christuniversity.in",
+      "emailLink": "mailto:sivabalan.rv@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/NTkzNA==/ODA0",
+      "linkedin": "https://www.linkedin.com/in/r-v-siva-balan-b364b531/",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [],
+      "image": "https://christuniversity.in/uploads/faculty-image/E5934.jpg"
+    },
+    {
+      "facultyId": 3529,
+      "name": "Teena Jose",
+      "slug": "teena-jose",
+      "designation": "Assistant Professor",
+      "gender": "Female",
+      "department": "CS-BYC",
+      "email": "teena.jose@christuniversity.in",
+      "emailLink": "mailto:teena.jose@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/NTkzMg==/ODA0",
+      "linkedin": "",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [],
+      "image": "https://christuniversity.in/uploads/faculty-image/E5932.jpg"
+    },
+    {
+      "facultyId": 3535,
+      "name": "Kalpana P",
+      "slug": "kalpana-p",
+      "designation": "Associate Professor",
+      "gender": "Female",
+      "department": "CS-BYC",
+      "email": "kalpana.p@christuniversity.in",
+      "emailLink": "mailto:kalpana.p@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/NTkyNg==/ODA0",
+      "linkedin": "https://www.linkedin.com/in/dr-kalpana-parasuraman-4898a5228/",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [
+        "Data Mining",
+        "Machine Learning",
+        "Artificial Intelligence"
+      ],
+      "image": "https://christuniversity.in/uploads/faculty-image/E5926.jpg"
+    },
+    {
+      "facultyId": 3543,
+      "name": "Loveline Zeema J",
+      "slug": "loveline-zeema-j",
+      "designation": "Associate Professor",
+      "gender": "Female",
+      "department": "CS-BYC",
+      "email": "loveline.zeema@christuniversity.in",
+      "emailLink": "mailto:loveline.zeema@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/NTk0NQ==/ODA0",
+      "linkedin": "https://www.linkedin.com/in/lovelinezeema/",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [
+        "Artificial Intelligence",
+        "Nature Inspired Algorithms"
+      ],
+      "image": "https://christuniversity.in/uploads/faculty-image/E5945.jpg"
+    },
+    {
+      "facultyId": 3544,
+      "name": "Gobinath R",
+      "slug": "gobinath-r",
+      "designation": "Associate Professor",
+      "gender": "Male",
+      "department": "CS-BYC",
+      "email": "gobinath.r@christuniversity.in",
+      "emailLink": "mailto:gobinath.r@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/NTkzMQ==/ODA0",
+      "linkedin": "https://www.linkedin.com/in/dr-gobinath-r/",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [],
+      "image": "https://christuniversity.in/uploads/faculty-image/E5931.jpg"
+    },
+    {
+      "facultyId": 3549,
+      "name": "Raju Ramakrishna Gondkar",
+      "slug": "raju-ramakrishna-gondkar",
+      "designation": "Professor",
+      "gender": "Male",
+      "department": "CS-BYC",
+      "email": "raju.ramakrishna@christuniversity.in",
+      "emailLink": "mailto:raju.ramakrishna@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/NTk4NQ==/ODA0",
+      "linkedin": "https://www.linkedin.com/in/raju-ramakrishna-gondkar-450366318/",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [],
+      "image": "https://christuniversity.in/uploads/faculty-image/E5985.jpg"
+    },
+    {
+      "facultyId": 3641,
+      "name": "Deepa S",
+      "slug": "deepa-s",
+      "designation": "Associate Professor",
+      "gender": "Female",
+      "department": "CS-BYC",
+      "email": "deepa.s@christuniversity.in",
+      "emailLink": "mailto:deepa.s@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/NjE5MA==/ODA0",
+      "linkedin": "https://www.linkedin.com/in/dr-deepa-3a742a121/",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [],
+      "image": "https://christuniversity.in/uploads/faculty-image/E6190.jpg"
+    },
+    {
+      "facultyId": 3648,
+      "name": "Laxmi Basappa Dharmannanavar",
+      "slug": "laxmi-basappa-dharmannanavar",
+      "designation": "Assistant Professor",
+      "gender": "Female",
+      "department": "CS-BYC",
+      "email": "laxmi.basappa@christuniversity.in",
+      "emailLink": "mailto:laxmi.basappa@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/NjIwMA==/ODA0",
+      "linkedin": "",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [],
+      "image": "https://christuniversity.in/uploads/faculty-image/E6200.jpg"
+    },
+    {
+      "facultyId": 3687,
+      "name": "Balakrishnan C",
+      "slug": "balakrishnan-c",
+      "designation": "Associate Professor",
+      "gender": "Male",
+      "department": "CS-BYC",
+      "email": "balakrishnan.c@christuniversity.in",
+      "emailLink": "mailto:balakrishnan.c@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/NjI1Nw==/ODA0",
+      "linkedin": "https://www.linkedin.com/in/balakrishnan-c-phd-58b11427/",
+      "roles": [
+        "faculty",
+        "admin",
+        "assochod"
+      ],
+      "specializations": [
+        "Machine Learning",
+        "Digital Twins",
+        "Vision-Language Models"
+      ],
+      "image": "https://christuniversity.in/uploads/faculty-image/E6257.jpg"
+    },
+    {
+      "facultyId": 3691,
+      "name": "Jayapriya J",
+      "slug": "jayapriya-j",
+      "designation": "Associate Professor",
+      "gender": "Female",
+      "department": "CS-BYC",
+      "email": "jayapriya.j@christuniversity.in",
+      "emailLink": "mailto:jayapriya.j@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/NjI3NA==/ODA0",
+      "linkedin": "https://www.linkedin.com/in/jayapriya-j-50054848/",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [
+        "Computational Intelligence",
+        "Cyber Security",
+        "Artifictial Intelligence"
+      ],
+      "image": "https://christuniversity.in/uploads/faculty-image/E6274.jpg"
+    },
+    {
+      "facultyId": 4034,
+      "name": "Kokilavani T",
+      "slug": "kokilavani-t",
+      "designation": "Associate Professor",
+      "gender": "Female",
+      "department": "CS-BYC",
+      "email": "kokilavani.t@christuniversity.in",
+      "emailLink": "mailto:kokilavani.t@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/Njg0NA==/ODA0",
+      "linkedin": "https://www.linkedin.com/in/kokilavani-t-phd-4b8bb028a/",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Edge Computing"
+      ],
+      "image": "https://christuniversity.in/uploads/faculty-image/E6844.jpg"
+    },
+    {
+      "facultyId": 4037,
+      "name": "Mahalakshmi J",
+      "slug": "mahalakshmi-j",
+      "designation": "Assistant Professor",
+      "gender": "Female",
+      "department": "CS-BYC",
+      "email": "mahalakshmi.j@christuniversity.in",
+      "emailLink": "mailto:mahalakshmi.j@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/Njg1Nw==/ODA0",
+      "linkedin": "https://www.linkedin.com/in/lt-ncc-dr-mahalakshmi-jeyabalu-7a8b1796/",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [],
+      "image": "https://christuniversity.in/uploads/faculty-image/E6857.jpg"
+    },
+    {
+      "facultyId": 4039,
+      "name": "Stephen R",
+      "slug": "stephen-r",
+      "designation": "Assistant Professor",
+      "gender": "Male",
+      "department": "CS-BYC",
+      "email": "stephen.r@christuniversity.in",
+      "emailLink": "mailto:stephen.r@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/Njg0Ng==/ODA0",
+      "linkedin": "https://www.linkedin.com/in/stephen-r-computer-science-yeshwanthpur-63467534a/",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [
+        "Internet of Things",
+        "Data communications",
+        "Networking",
+        "Artificial Intelligence"
+      ],
+      "image": "https://christuniversity.in/uploads/faculty-image/E6846.jpg"
+    },
+    {
+      "facultyId": 4059,
+      "name": "Suganthi J",
+      "slug": "suganthi-j",
+      "designation": "Associate Professor",
+      "gender": "Female",
+      "department": "CS-BYC",
+      "email": "suganthi.j@christuniversity.in",
+      "emailLink": "mailto:suganthi.j@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/Njg2OQ==/ODA0",
+      "linkedin": "https://www.linkedin.com/in/suganthi-phd-8235b61b1/",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [],
+      "image": "https://christuniversity.in/uploads/faculty-image/E6869.jpg"
+    },
+    {
+      "facultyId": 4061,
+      "name": "Gayathry S Warrier",
+      "slug": "gayathry-s-warrier",
+      "designation": "Assistant Professor",
+      "gender": "Female",
+      "department": "CS-BYC",
+      "email": "gayathry.warrier@christuniversity.in",
+      "emailLink": "mailto:gayathry.warrier@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/Njg3MA==/ODA0",
+      "linkedin": "https://www.linkedin.com/in/dr-gayathry-s-warrier-2153a018/",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [],
+      "image": "https://christuniversity.in/uploads/faculty-image/E6870.jpg"
+    },
+    {
+      "facultyId": 4082,
+      "name": "Sindhu V",
+      "slug": "sindhu-v",
+      "designation": "Assistant Professor",
+      "gender": "Female",
+      "department": "CS-BYC",
+      "email": "sindhu.v@christuniversity.in",
+      "emailLink": "mailto:sindhu.v@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/NjkwMA==/ODA0",
+      "linkedin": "https://www.linkedin.com/in/drsindhuvelusamy/",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [],
+      "image": "https://christuniversity.in/uploads/faculty-image/E6900.jpg"
+    },
+    {
+      "facultyId": 4176,
+      "name": "Jayadurga R",
+      "slug": "jayadurga-r",
+      "designation": "Assistant Professor",
+      "gender": "Female",
+      "department": "CS-BYC",
+      "email": "jayadurga.r@christuniversity.in",
+      "emailLink": "mailto:jayadurga.r@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/NzEyMw==/ODA0",
+      "linkedin": "https://www.linkedin.com/in/jayadurga-r-phd-computer-science-5619452b3/",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [
+        "ML",
+        "IOT  AI"
+      ],
+      "image": "https://christuniversity.in/uploads/faculty-image/E7123.jpg"
+    },
+    {
+      "facultyId": 4451,
+      "name": "Priya Stella Mary I",
+      "slug": "priya-stella-mary-i",
+      "designation": "Assistant Professor",
+      "gender": "Female",
+      "department": "CS-BYC",
+      "email": "priya.stella@christuniversity.in",
+      "emailLink": "mailto:priya.stella@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/ODM4MA==/ODA0",
+      "linkedin": "https://www.linkedin.com/in/priya-stella-mary-i-473320244/",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [
+        "AI",
+        "Machine Learning",
+        "Deep Learning",
+        "Data science",
+        "IoT",
+        "Image and Video Analytics"
+      ],
+      "image": "https://christuniversity.in/uploads/faculty-image/E8380.jpg"
+    },
+    {
+      "facultyId": 4455,
+      "name": "Margaret Savitha",
+      "slug": "margaret-savitha",
+      "designation": "Assistant Professor",
+      "gender": "Female",
+      "department": "CS-BYC",
+      "email": "margaret.savitha@christuniversity.in",
+      "emailLink": "mailto:margaret.savitha@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/ODM4NA==/ODA0",
+      "linkedin": "https://www.linkedin.com/in/margaret-savitha-p-ph-d-computer-science-b48626342/",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Quantum Machine Learning"
+      ],
+      "image": "https://christuniversity.in/uploads/faculty-image/E8384.jpg"
+    },
+    {
+      "facultyId": 4506,
+      "name": "Juliet Rozario",
+      "slug": "juliet-rozario",
+      "designation": "Assistant Professor",
+      "gender": "Female",
+      "department": "CS-BYC",
+      "email": "juliet.rozario@christuniversity.in",
+      "emailLink": "mailto:juliet.rozario@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/ODQ0NA==/ODA0",
+      "linkedin": "https://www.linkedin.com/in/julietrozario/",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [
+        "Machine Learning"
+      ],
+      "image": "https://christuniversity.in/uploads/faculty-image/E8444.jpg"
+    },
+    {
+      "facultyId": 4562,
+      "name": "Anusha James",
+      "slug": "anusha-james",
+      "designation": "Assistant Professor",
+      "gender": "Female",
+      "department": "CS-BYC",
+      "email": "anusha.james@christuniversity.in",
+      "emailLink": "mailto:anusha.james@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/ODUwOA==/ODA0",
+      "linkedin": "https://www.linkedin.com/in/dr-anusha-james-206252187/",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [],
+      "image": "https://christuniversity.in/uploads/faculty-image/E8508.jpg"
+    },
+    {
+      "facultyId": 4568,
+      "name": "Kannan M",
+      "slug": "kannan-m",
+      "designation": "Assistant Professor",
+      "gender": "Male",
+      "department": "CS-BYC",
+      "email": "kannan.m@christuniversity.in",
+      "emailLink": "mailto:kannan.m@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/ODUxNw==/ODA0",
+      "linkedin": "https://www.linkedin.com/in/kannanmuthusamy/",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [
+        "Machine Learning",
+        "Deep Learning",
+        "Data Mining",
+        "XAI",
+        "Soft Computing",
+        "Natural Language Processing"
+      ],
+      "image": "https://christuniversity.in/uploads/faculty-image/E8517.jpg"
+    },
+    {
+      "facultyId": 4571,
+      "name": "Kavitha S",
+      "slug": "kavitha-s",
+      "designation": "Associate Professor",
+      "gender": "Female",
+      "department": "CS-BYC",
+      "email": "kavitha.s@christuniversity.in",
+      "emailLink": "mailto:kavitha.s@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/ODUyMQ==/ODA0",
+      "linkedin": "https://in.linkedin.com/in/kavitha-s-079447130",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [
+        "Image Processing",
+        "Pattern recognition",
+        "Network Security",
+        "cloud computing",
+        "neural networks"
+      ],
+      "image": "https://christuniversity.in/uploads/faculty-image/E8521.jpg"
+    },
+    {
+      "facultyId": 4585,
+      "name": "Thontadari C",
+      "slug": "thontadari-c",
+      "designation": "Assistant Professor",
+      "gender": "Male",
+      "department": "CS-BYC",
+      "email": "thontadari.c@christuniversity.in",
+      "emailLink": "mailto:thontadari.c@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/ODUzOQ==/ODA0",
+      "linkedin": "https://www.linkedin.com/in/thontadari-c-14b5a6350/",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [],
+      "image": "https://christuniversity.in/uploads/faculty-image/E8539.jpg"
+    },
+    {
+      "facultyId": 4595,
+      "name": "Hemanth K S",
+      "slug": "hemanth-k-s",
+      "designation": "Associate Professor",
+      "gender": "Male",
+      "department": "CS-BYC",
+      "email": "hemanth.ks@christuniversity.in",
+      "emailLink": "mailto:hemanth.ks@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/ODU1Ng==/ODA0",
+      "linkedin": "https://www.linkedin.com/in/hemanth-k-s-ph-d-computer-science-643b4715/",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [],
+      "image": "https://christuniversity.in/uploads/faculty-image/E8556.jpg"
+    },
+    {
+      "facultyId": 4604,
+      "name": "Manimekala B",
+      "slug": "manimekala-b",
+      "designation": "Assistant Professor",
+      "gender": "Female",
+      "department": "CS-BYC",
+      "email": "manimekala.b@christuniversity.in",
+      "emailLink": "mailto:manimekala.b@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/ODU2OA==/ODA0",
+      "linkedin": "https://www.linkedin.com/in/manimekala-b-computer-science-yeshwanthpur-89a02637a/",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [
+        "Networks",
+        "IoT",
+        "ML",
+        "AI"
+      ],
+      "image": "https://christuniversity.in/uploads/faculty-image/E8568.jpg"
+    },
+    {
+      "facultyId": 4619,
+      "name": "Umamaheswari D",
+      "slug": "umamaheswari-d",
+      "designation": "Assistant Professor",
+      "gender": "Female",
+      "department": "CS-BYC",
+      "email": "umamaheswari.d@christuniversity.in",
+      "emailLink": "mailto:umamaheswari.d@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/ODU5MA==/ODA0",
+      "linkedin": "https://www.linkedin.com/in/umamaheswari-d-ph-d-computer-science-4b8aa3324/",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [
+        "Machine Learning",
+        "Deep Learning",
+        "Image Processing",
+        "Artificial Intelligence"
+      ],
+      "image": "https://christuniversity.in/uploads/faculty-image/E8590.jpg"
+    },
+    {
+      "facultyId": 4712,
+      "name": "Deepa B G",
+      "slug": "deepa-b-g",
+      "designation": "Associate Professor",
+      "gender": "Female",
+      "department": "CS-BYC",
+      "email": "deepa.bg@christuniversity.in",
+      "emailLink": "mailto:deepa.bg@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/ODc1NQ==/ODA0",
+      "linkedin": "https://www.linkedin.com/in/deepa-b-g-718219232/",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [
+        "Machine Learning",
+        "Deep learning",
+        "Artificial Intelligence"
+      ],
+      "image": "https://christuniversity.in/uploads/faculty-image/E8755.jpg"
+    },
+    {
+      "facultyId": 4746,
+      "name": "Ravi Dandu",
+      "slug": "ravi-dandu",
+      "designation": "Associate Professor",
+      "gender": "Male",
+      "department": "CS-BYC",
+      "email": "ravi.dandu@christuniversity.in",
+      "emailLink": "mailto:ravi.dandu@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/ODgxNA==/ODA0",
+      "linkedin": "https://www.linkedin.com/in/ravi-dandu-ph-d-3272521a6/",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [],
+      "image": "https://kp.christuniversity.in/KnowledgePro/images/EmployeePhotos/E8814.jpg"
+    },
+    {
+      "facultyId": 4804,
+      "name": "Kousalya R",
+      "slug": "kousalya-r",
+      "designation": "Assistant Professor",
+      "gender": "Female",
+      "department": "CS-BYC",
+      "email": "kousalya.r@christuniversity.in",
+      "emailLink": "mailto:kousalya.r@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/ODk5MA==/ODA0",
+      "linkedin": "https://www.linkedin.com/in/dr-r-kousalya/",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [
+        "Machine Learning",
+        "Artificial Intelligence",
+        "Data Analysis",
+        "Data mining"
+      ],
+      "image": "https://kp.christuniversity.in/KnowledgePro/images/EmployeePhotos/E8990.jpg"
+    },
+    {
+      "facultyId": 4985,
+      "name": "Rajasekaran",
+      "slug": "rajasekaran",
+      "designation": "Assistant Professor",
+      "gender": "Male",
+      "department": "CS-BYC",
+      "email": "rajasekaran.n@christuniversity.in",
+      "emailLink": "mailto:rajasekaran.n@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/OTI5NA==/ODA0",
+      "linkedin": "https://www.linkedin.com/in/dr-rajasekaran-n-4bb658196/",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [
+        "Software Engineering",
+        "Machine Learning",
+        "Deep Learning"
+      ],
+      "image": "https://kp.christuniversity.in/KnowledgePro/images/EmployeePhotos/E9294.jpg"
+    },
+    {
+      "facultyId": 7034,
+      "name": "Shrinath Bijjargi",
+      "slug": "shrinath-bijjargi",
+      "designation": "Assistant Professor",
+      "gender": "Male",
+      "department": "CS-BYC",
+      "email": "shrinath.bijjargi@christuniversity.in",
+      "emailLink": "mailto:shrinath.bijjargi@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/OTM2Ng==/ODA0",
+      "linkedin": "https://www.linkedin.com/in/shrinath-bijjargi-69833114b/",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [],
+      "image": "https://kp.christuniversity.in/KnowledgePro/images/EmployeePhotos/E9366.jpg"
+    },
+    {
+      "facultyId": 7041,
+      "name": "Smruti Dilip Dabhole",
+      "slug": "smruti-dilip-dabhole",
+      "designation": "Assistant Professor",
+      "gender": "Female",
+      "department": "CS-BYC",
+      "email": "smruti.dabhole@christuniversity.in",
+      "emailLink": "mailto:smruti.dabhole@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/OTM1Mw==/ODA0",
+      "linkedin": "https://www.linkedin.com/in/dr-smruti-dilip-dabhole-2109a3135/",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [],
+      "image": "https://kp.christuniversity.in/KnowledgePro/images/EmployeePhotos/E9353.jpg"
+    },
+    {
+      "facultyId": 7050,
+      "name": "Krishna Presannakumar",
+      "slug": "krishna-presannakumar",
+      "designation": "Assistant Professor",
+      "gender": "Female",
+      "department": "CS-BYC",
+      "email": "krishna.presannakumar@christuniversity.in",
+      "emailLink": "mailto:krishna.presannakumar@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/OTM1OQ==/ODA0",
+      "linkedin": "https://www.linkedin.com/in/krishna-presannakumar/",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [],
+      "image": "https://kp.christuniversity.in/KnowledgePro/images/EmployeePhotos/E9359.jpg"
+    },
+    {
+      "facultyId": 7056,
+      "name": "Praveen V P",
+      "slug": "praveen-v-p",
+      "designation": "Assistant Professor",
+      "gender": "male",
+      "department": "CS-BYC",
+      "email": "praveen.vp@christuniversity.in",
+      "emailLink": "mailto:praveen.vp@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/OTM2NQ==/ODA0",
+      "linkedin": "https://www.linkedin.com/in/praveen-v-p/",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [],
+      "image": "https://kp.christuniversity.in/KnowledgePro/images/EmployeePhotos/E9365.jpg"
+    },
+    {
+      "facultyId": 7126,
+      "name": "Mithun D Souza",
+      "slug": "mithun-d-souza",
+      "designation": "Assistant Professor",
+      "gender": "Male",
+      "department": "CS-BYC",
+      "email": "mithun.dsouza@christuniversity.in",
+      "emailLink": "mailto:mithun.dsouza@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/OTQ0MQ==/ODA0",
+      "linkedin": "https://www.linkedin.com/in/dr-mithun-d-souza-b06329103/",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [],
+      "image": "https://kp.christuniversity.in/KnowledgePro/images/EmployeePhotos/E9441.jpg"
+    },
+    {
+      "facultyId": 7171,
+      "name": "Pavithra.K",
+      "slug": "pavithra-k",
+      "designation": "Assistant Professor",
+      "gender": "Female",
+      "department": "CS-BYC",
+      "email": "pavithra.k@christuniversity.in",
+      "emailLink": "mailto:pavithra.k@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/OTUyMA==/ODA0",
+      "linkedin": "https://www.linkedin.com/in/drpavithrak-cs/",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [],
+      "image": "https://kp.christuniversity.in/KnowledgePro/images/EmployeePhotos/E9520.jpg"
+    },
+    {
+      "facultyId": 7207,
+      "name": "Vinay K",
+      "slug": "vinay-k",
+      "designation": "Assistant Professor",
+      "gender": "Male",
+      "department": "CS-BYC",
+      "email": "vinaycbs@gmail.com",
+      "emailLink": "mailto:vinaycbs@gmail.com",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/OTYyOA==/ODA0",
+      "linkedin": "https://www.linkedin.com/in/vinay-krishna-8527431b/",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [],
+      "image": "https://kp.christuniversity.in/KnowledgePro/images/EmployeePhotos/E9628.jpg"
+    },
+    {
+      "facultyId": 7250,
+      "name": "Lakshmi Sankaran",
+      "slug": "lakshmi-sankaran",
+      "designation": "Associate Professor",
+      "gender": "Female",
+      "department": "CS-BYC",
+      "email": "lakshmi.sankaran@christuniversity.in",
+      "emailLink": "mailto:lakshmi.sankaran@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/OTc5Mw==/ODA0",
+      "linkedin": "https://www.linkedin.com/in/sankaranlakshmi/",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [],
+      "image": "https://kp.christuniversity.in/KnowledgePro/images/EmployeePhotos/E9793.jpg"
+    },
+    {
+      "facultyId": 7504,
+      "name": "Divyashree D",
+      "slug": "divyashree-d",
+      "designation": "Assistant Professor",
+      "gender": "Female",
+      "department": "CS-BYC",
+      "email": "divyashree.d@christuniversity.in",
+      "emailLink": "mailto:divyashree.d@christuniversity.in",
+      "christProfile": "https://christuniversity.in/computer-science/faculty-details/MTA2NDc=/ODA0",
+      "linkedin": "https://www.linkedin.com/in/dr-divyashree-duggegowda-01247a163/",
+      "roles": [
+        "faculty"
+      ],
+      "specializations": [
+        "Blockchain Technology",
+        "Artificial Intelligence",
+        "Cloud Computing"
+      ],
+      "image": "https://kp.christuniversity.in/KnowledgePro/images/EmployeePhotos/E10647.jpg"
+    }
+  ]
+}
