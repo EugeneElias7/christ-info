@@ -60,27 +60,27 @@ function FacultyCard({ faculty }: { faculty: typeof facultyOnly[0] }) {
           </div>
         )}
 
-        <div className="flex items-center gap-1.5 mt-2.5 pt-2.5 border-t border-cream-border">
+        <div className="flex items-center gap-1.5 mt-2 pt-2 border-t border-cream-border">
           {faculty.linkedin && (
             <a
               href={faculty.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="flex items-center gap-1 px-2 py-1 rounded-[4px] bg-blue-600 text-white text-[9px] font-sans font-medium hover:bg-blue-700 transition-colors"
+              className="flex items-center gap-1 px-2 py-1 rounded-[4px] bg-blue-600 text-white text-[8px] font-sans font-medium hover:bg-blue-700 transition-colors"
               aria-label={`${faculty.name} on LinkedIn`}
             >
-              <Linkedin size={10} strokeWidth={1.5} /> in
+              <Linkedin size={8} strokeWidth={1.5} /> in
             </a>
           )}
           {faculty.emailLink && (
             <a
               href={faculty.emailLink}
               onClick={(e) => e.stopPropagation()}
-              className="flex items-center gap-1 px-2 py-1 rounded-[4px] bg-gold/10 text-gold/70 text-[9px] font-sans font-medium hover:bg-gold hover:text-maroon-dark transition-all"
+              className="flex items-center gap-1 px-2 py-1 rounded-[4px] bg-gold/10 text-gold/70 text-[8px] font-sans font-medium hover:bg-gold hover:text-maroon-dark transition-all"
               aria-label={`Email ${faculty.name}`}
             >
-              <Mail size={10} strokeWidth={1.5} /> @
+              <Mail size={8} strokeWidth={1.5} /> @
             </a>
           )}
         </div>
