@@ -39,8 +39,8 @@ export function NavigationFunnel() {
                 <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/50 to-transparent" />
               </div>
               <div className="p-card-p flex flex-col flex-1">
-                <p className="text-eyebrow font-sans text-gold tracking-widest uppercase mb-1">Explore</p>
-                <h2 className="text-heading font-serif text-maroon leading-tight mb-1">CHRIST University</h2>
+                <p className="text-eyebrow font-sans text-gold tracking-widest uppercase mb-1">University</p>
+                <h2 className="text-heading font-serif text-maroon leading-tight mb-1">CHRIST (Deemed to be University) </h2>
                 <p className="text-body-sm font-sans text-charcoal/60 flex-1 mb-4">
                   Discover our legacy of excellence, holistic education, and value-based learning since 1969.
                 </p>
@@ -70,10 +70,10 @@ export function NavigationFunnel() {
                 <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/50 to-transparent" />
               </div>
               <div className="p-card-p flex flex-col flex-1">
-                <p className="text-eyebrow font-sans text-gold tracking-widest uppercase mb-1">Explore</p>
-                <h2 className="text-heading font-serif text-maroon leading-tight mb-1">Yeshwantpur Campus</h2>
+                <p className="text-eyebrow font-sans text-gold tracking-widest uppercase mb-1">Campus</p>
+                <h2 className="text-heading font-serif text-maroon leading-tight mb-1">Banglore Yeshwantpur Campus (BYC)</h2>
                 <p className="text-body-sm font-sans text-charcoal/60 flex-1 mb-4">
-                  Your home for innovation, collaboration, and cutting-edge technology education.
+                  A Joyful and Caring Campus for innovation, collaboration, and cutting-edge technology education.
                 </p>
                 <a
                   href="https://byc.christuniversity.in/"
@@ -98,7 +98,7 @@ export function NavigationFunnel() {
                       Computer Science
                     </h2>
                     <p className="text-body-sm font-sans text-charcoal/60 leading-relaxed max-w-xs">
-                      Empowering students with cutting-edge knowledge, world-class faculty, and a culture of excellence.
+                      Empowering students with technical knowledge, societal commitment, and a pursuit of excellence through the mentorship of dedicated faculty.
                     </p>
                   </div>
 
