@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Search, Linkedin, Mail, ExternalLink, ClipboardList, MapPin } from 'lucide-react'
+import { Search, Linkedin, Mail, ExternalLink, ClipboardList, MapPin, FileText, GraduationCap } from 'lucide-react'
 import { facultyOnly, leadershipTeam } from '../data/leadership'
 import { getMotionVariants, fadeInUp, staggerContainer } from '../lib/animations'
 import { EmailPopup } from '../components/ui/EmailPopup'
@@ -8,6 +8,8 @@ import { EmailPopup } from '../components/ui/EmailPopup'
 const filters = ['All', 'Professors', 'Associate Professors', 'Assistant Professors', 'Academic Support'] as const
 
 function FacultyCard({ faculty }: { faculty: typeof facultyOnly[0] }) {
+  const [imgError, setImgError] = useState(false)
+
   return (
     <motion.a
       href={faculty.profileUrl || undefined}
@@ -17,11 +19,13 @@ function FacultyCard({ faculty }: { faculty: typeof facultyOnly[0] }) {
       className="group block bg-white border border-cream-border rounded-card-lg shadow-card-white overflow-hidden cursor-pointer transition-all duration-350 ease-smooth hover:border-gold/40 hover:shadow-card-hover hover:-translate-y-1.5"
     >
       <div className="relative overflow-hidden">
-        {faculty.imageUrl ? (
+        {faculty.imageUrl && !imgError ? (
           <img
             src={faculty.imageUrl}
             alt={faculty.name}
             className="aspect-[4/5] w-full object-cover transition-transform duration-350 ease-smooth group-hover:scale-105"
+            loading="lazy"
+            onError={() => setImgError(true)}
           />
         ) : (
           <div className="aspect-[4/5] bg-gradient-to-br from-charcoal via-charcoal-mid to-charcoal/90 flex items-center justify-center transition-transform duration-350 ease-smooth group-hover:scale-105">
@@ -288,11 +292,61 @@ export function FacultyPage() {
             <h2 className="text-heading font-serif text-maroon mb-4">All Faculty</h2>
           )}
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2.5">
-            {filtered.map((faculty) => (
-              <FacultyCard key={faculty.id} faculty={faculty} />
-            ))}
-          </div>
+          {activeFilter === 'Academic Support' && !searchQuery ? (
+            <div className="flex flex-col lg:flex-row gap-5">
+              <div className="w-[190px] flex-shrink-0">
+                {filtered.map((faculty) => (
+                  <FacultyCard key={faculty.id} faculty={faculty} />
+                ))}
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="bg-white border border-cream-border rounded-card-lg shadow-card-white overflow-hidden">
+                  <div className="h-[3px] bg-gradient-to-r from-gold/60 via-gold to-gold/60" />
+                  <div className="p-4">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="text-[9px] font-sans font-semibold text-gold uppercase tracking-wider px-2 py-0.5 rounded bg-gold/10">Forms & Services</span>
+                      <FileText size={11} strokeWidth={1.5} className="text-gold/60" />
+                    </div>
+                    <div className="space-y-2">
+                      {[
+                        { color: 'bg-yellow-400', label: 'Yellow Forms', desc: 'Claim attendance for ECAs, Events & Workshops' },
+                        { color: 'bg-blue-500', label: 'Blue Forms', desc: 'Claim medical leave with genuine prescription' },
+                        { color: 'bg-pink-400', label: 'Pink Forms', desc: 'Claim attendance while sitting for placements' },
+                      ].map((f) => (
+                        <div key={f.label} className="flex items-start gap-2.5 p-2.5 rounded-card-lg border border-cream-border bg-cream/50">
+                          <div className={`w-6 h-6 rounded ${f.color} bg-opacity-20 flex items-center justify-center flex-shrink-0 mt-0.5`}>
+                            <div className={`w-3 h-3 rounded-full ${f.color}`} />
+                          </div>
+                          <div>
+                            <p className="text-[11px] font-serif font-semibold text-maroon">{f.label}</p>
+                            <p className="text-[9px] font-sans text-charcoal/60">{f.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                      <div className="flex items-start gap-2.5 p-2.5 rounded-card-lg border border-cream-border bg-cream/50">
+                        <div className="w-6 h-6 rounded bg-gold/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <GraduationCap size={12} strokeWidth={1.5} className="text-gold" />
+                        </div>
+                        <div>
+                          <p className="text-[11px] font-serif font-semibold text-maroon">Bonafide Certificates</p>
+                          <p className="text-[9px] font-sans text-charcoal/60">Also available — contact the office</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="mt-3 p-2.5 rounded-card-lg bg-gold/5 border border-gold/20">
+                      <p className="text-[9px] font-sans text-charcoal/50">📍 Room 201, Block B</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2.5">
+              {filtered.map((faculty) => (
+                <FacultyCard key={faculty.id} faculty={faculty} />
+              ))}
+            </div>
+          )}
 
           {filtered.length === 0 && (
             <p className="text-center text-charcoal/40 font-sans py-12">No faculty found matching your criteria.</p>

@@ -6,6 +6,22 @@ export interface ProgrammeSection {
   floor?: string;
 }
 
+export interface UniversityLink {
+  name: string;
+  url: string;
+  subItems?: string[];
+}
+
+export interface HighlightItem {
+  text: string;
+  universities?: UniversityLink[];
+}
+
+export interface HighlightGroup {
+  title: string;
+  items: HighlightItem[];
+}
+
 export interface Programme {
   id: string;
   name: string;
@@ -16,6 +32,7 @@ export interface Programme {
   icon: string;
   exploreUrl: string;
   sections: ProgrammeSection[];
+  highlights?: HighlightGroup[];
 }
 
 export const programmes: Programme[] = [
@@ -32,6 +49,36 @@ export const programmes: Programme[] = [
       { name: '1 BCA A', roomNo: 'B202', classTeacher: 'Thontadari C', strength: 65, floor: 'Second Floor' },
       { name: '1 BCA B', roomNo: 'B203', classTeacher: 'Loveline Zeema', strength: 65, floor: 'Second Floor' },
     ],
+    highlights: [
+      {
+        title: 'Student Exchange Programmes',
+        items: [
+          {
+            text: 'Student Exchange Programmes with International Partner Universities',
+            universities: [
+              {
+                name: 'THWS University, Germany',
+                url: 'https://www.thws.de/',
+                subItems: ['Semester Exchange Programme', 'Year Exchange Programme'],
+              },
+              {
+                name: 'Edgehill University, UK',
+                url: 'https://www.edgehill.ac.uk',
+                subItems: ['Semester Exchange Programme', 'Year Exchange Programme'],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Academic & Career Development',
+        items: [
+          { text: 'Industry-Relevant Curriculum' },
+          { text: 'Fast Track Programme' },
+          { text: 'Flexible Internship Pathways' },
+        ],
+      },
+    ],
   },
   {
     id: 'mds',
@@ -44,6 +91,30 @@ export const programmes: Programme[] = [
     sections: [
       { name: '1 MDS A', roomNo: 'B212', classTeacher: 'Gobinath R', strength: 65, floor: 'Second Floor' },
     ],
+    highlights: [
+      {
+        title: 'Student Exchange Programmes',
+        items: [
+          {
+            text: 'Student Exchange Programmes with International Universities',
+            universities: [
+              { name: 'Binghamton University', url: 'https://www.binghamton.edu/' },
+              { name: 'Virginia Commonwealth University', url: 'https://www.vcu.edu/' },
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Academic Opportunities',
+        items: [
+          { text: 'Advanced Data Analytics Curriculum' },
+          { text: 'Industry Projects' },
+          { text: 'Research-Oriented Learning' },
+          { text: 'Internship Opportunities' },
+          { text: 'Capstone Project Experience' },
+        ],
+      },
+    ],
   },
   {
     id: 'msc-ai-cs',
@@ -55,6 +126,31 @@ export const programmes: Programme[] = [
     exploreUrl: 'https://christuniversity.in//courses/NjM5',
     sections: [
       { name: '1 MSc AICS', roomNo: 'B219', classTeacher: 'Kavitha S', strength: 65, floor: 'Second Floor' },
+    ],
+    highlights: [
+      {
+        title: 'Student Exchange Programmes',
+        items: [
+          {
+            text: 'Student Exchange Programmes with International Universities',
+            universities: [
+              { name: 'Binghamton University', url: 'https://www.binghamton.edu/' },
+              { name: 'Virginia Commonwealth University', url: 'https://www.vcu.edu/' },
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Academic Opportunities',
+        items: [
+          { text: 'Artificial Intelligence & Machine Learning Focus' },
+          { text: 'Cyber Security Specialization' },
+          { text: 'Industry-Aligned Curriculum' },
+          { text: 'Research & Innovation Opportunities' },
+          { text: 'Internship Opportunities' },
+          { text: 'Hands-on Laboratory Experience' },
+        ],
+      },
     ],
   },
   {

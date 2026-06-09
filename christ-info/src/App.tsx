@@ -3,13 +3,16 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { Analytics } from '@vercel/analytics/react'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
+import { SocialSidebar } from './components/layout/SocialSidebar'
 import ScrollToTop from './components/ScrollToTop'
 import HomePage from './pages/HomePage'
 import ProgrammesPage from './pages/ProgrammesPage'
 import ProgrammeDetailPage from './pages/ProgrammeDetailPage'
-import AboutUniversityPage from './pages/AboutUniversityPage'
 import FacultyPage from './pages/FacultyPage'
-import SamagraPage from './pages/SamagraPage'
+import ClubsAssociationsPage from './pages/ClubsAssociationsPage'
+import LabsPage from './pages/LabsPage'
+import CertificationsPage from './pages/CertificationsPage'
+import HarmonyPage from './pages/HarmonyPage'
 
 function App() {
   const location = useLocation()
@@ -18,6 +21,7 @@ function App() {
     <div className="min-h-screen bg-cream font-sans">
       <ScrollToTop />
       <Navbar />
+      <SocialSidebar />
 
       <AnimatePresence mode="wait">
         <motion.div
@@ -31,9 +35,11 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/programmes" element={<ProgrammesPage />} />
             <Route path="/programmes/:id" element={<ProgrammeDetailPage />} />
-            <Route path="/about-university" element={<AboutUniversityPage />} />
             <Route path="/faculty" element={<FacultyPage />} />
-            <Route path="/samagra" element={<SamagraPage />} />
+            <Route path="/clubs-associations" element={<ClubsAssociationsPage />} />
+            <Route path="/labs" element={<LabsPage />} />
+            <Route path="/certifications" element={<CertificationsPage />} />
+            <Route path="/harmony" element={<HarmonyPage />} />
             <Route path="*" element={
               <div className="min-h-screen bg-cream pt-nav-h flex items-center justify-center">
                 <div className="text-center">

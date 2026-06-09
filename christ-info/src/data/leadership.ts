@@ -40,6 +40,7 @@ const hod = hodRaw ? {
   imageUrl: hodRaw.image || undefined,
   isLeadership: true,
   excludeFromFaculty: false,
+  location: hodRaw.location,
 } : null;
 
 const assocHodRaw = rawData.faculty.find(f => f.roles.includes('assochod'));
@@ -56,10 +57,11 @@ const assocHod = assocHodRaw ? {
   imageUrl: assocHodRaw.image || undefined,
   isLeadership: true,
   excludeFromFaculty: false,
+  location: assocHodRaw.location,
 } : null;
 
 // Program coordinators extracted separately to control ordering
-const coordinatorIds = ['bca-coordinator', 'mds-coordinator', 'ai-cyber-coordinator'];
+const coordinatorIds = ['bca-coordinator', 'mds-coordinator', 'ai-cyber-coordinator', 'phd-coordinator'];
 const programCoordinators = rawData.leadership
   .filter(l => coordinatorIds.includes(l.id))
   .map((l) => {
@@ -77,6 +79,7 @@ const programCoordinators = rawData.leadership
       imageUrl: facultyMatch?.image || l.image || undefined,
       isLeadership: true,
       excludeFromFaculty: !facultyMatch,
+      location: facultyMatch?.location,
     };
   });
 

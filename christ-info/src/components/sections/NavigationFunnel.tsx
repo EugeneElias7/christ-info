@@ -30,7 +30,7 @@ export function NavigationFunnel() {
             <div className="bg-white border border-cream-border rounded-card-lg shadow-card-white overflow-hidden h-full flex flex-col">
               <div className="relative h-48 lg:h-56 overflow-hidden">
                 <img
-                  src="https://christuniversity.in/uploads/banners/banner/1085904560_2026-05-07_12-50-42.png"
+                  src="https://christuniversity.in/uploads/coursecategory/medium/999927713_2026-05-20_10-19-38.webp"
                   alt="CHRIST University"
                   className="absolute inset-0 w-full h-full object-cover"
                   loading="lazy"

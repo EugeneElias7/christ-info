@@ -2,7 +2,15 @@ export interface NavLink {
   label: string;
   href: string;
   path?: string;
-  children?: { label: string; href?: string; path?: string; description?: string }[];
+  children?: NavChild[];
+}
+
+export interface NavChild {
+  label: string;
+  href?: string;
+  path?: string;
+  description?: string;
+  children?: NavChild[];
 }
 
 export interface FooterColumn {
@@ -13,16 +21,20 @@ export interface FooterColumn {
 export const navLinks: NavLink[] = [
   { label: 'Home', href: '/', path: '/' },
   {
-    label: 'About University',
-    href: '/about-university',
-    path: '/about-university',
+    label: 'Student Support',
+    href: '#',
     children: [
-      { label: 'Vision & Mission', href: '/about-university#vision-mission', path: '/about-university#vision-mission' },
-      { label: 'Graduate Attributes', href: '/about-university#graduate-attributes', path: '/about-university#graduate-attributes' },
-      { label: 'Founder Message', href: '/about-university#founder', path: '/about-university#founder' },
-      { label: 'History', href: '/about-university#history', path: '/about-university#history' },
-      { label: 'University Anthem', href: '/about-university#anthem', path: '/about-university#anthem' },
-      { label: 'Rules & Regulations', href: '/about-university#rules', path: '/about-university#rules' },
+      { label: 'Student Portal (KP)', href: 'https://kp.christuniversity.in/KnowledgePro/StudentLogin.do', description: 'Knowledge Pro student portal' },
+      { label: 'Harmony', path: '/harmony', description: 'Student wellness initiative' },
+      {
+        label: 'Internship',
+        children: [
+          { label: 'Summer Internship' },
+          { label: 'Flexible Internship' },
+          { label: '6-Month Full-Fledged Internship' },
+        ],
+      },
+      { label: 'Certifications', path: '/certifications', description: 'Professional certifications' },
     ],
   },
   {
@@ -37,7 +49,14 @@ export const navLinks: NavLink[] = [
     ],
   },
   { label: 'Faculty', href: '/faculty', path: '/faculty' },
-  { label: 'Samagra Association', href: '/samagra', path: '/samagra' },
+  {
+    label: 'Facilities',
+    href: '#',
+    children: [
+      { label: 'Labs', path: '/labs', description: 'Computer labs and research facilities' },
+    ],
+  },
+  { label: 'Clubs & Associations', href: '/clubs-associations', path: '/clubs-associations' },
 ];
 
 export const footerColumns: FooterColumn[] = [
@@ -47,7 +66,7 @@ export const footerColumns: FooterColumn[] = [
       { label: 'Home', href: '/' },
       { label: 'Programmes', href: '/programmes' },
       { label: 'Faculty', href: '/faculty' },
-      { label: 'About University', href: '/about-university' },
+      { label: 'Labs', href: '/labs' },
       { label: 'Rules & Regulations', href: '/#rules' },
       { label: 'Rankings', href: '/#stats' },
     ],
@@ -67,7 +86,7 @@ export const footerColumns: FooterColumn[] = [
       { label: 'CHRIST University', href: 'https://christuniversity.in/' },
       { label: 'Yeshwantpur Campus', href: 'https://byc.christuniversity.in/' },
       { label: 'CS Department', href: 'https://christuniversity.in/departments/yeshwanthpur-campus/school-of-sciences/computer-science' },
-      { label: 'Samagra Association', href: '/samagra' },
+      { label: 'Clubs & Associations', href: '/clubs-associations' },
     ],
   },
 ];

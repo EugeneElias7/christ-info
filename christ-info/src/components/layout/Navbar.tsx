@@ -13,12 +13,17 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Close mobile panel when path changes (navigation succeeded)
   useEffect(() => {
     setMobileOpen(false);
     setOpenDropdown(null);
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
   }, [location.pathname]);
 
   useEffect(() => {
@@ -49,6 +54,10 @@ export function Navbar() {
       return;
     }
     if (!href) return;
+    if (href.startsWith('http://') || href.startsWith('https://')) {
+      window.open(href, '_blank', 'noopener,noreferrer');
+      return;
+    }
     if (href.startsWith('/')) {
       navigate(href);
       return;
@@ -65,6 +74,58 @@ export function Navbar() {
   };
 
   const activePath = location.pathname;
+
+  function renderNavChildren(items: { label: string; href?: string; path?: string; children?: { label: string; href?: string; path?: string }[] }[], onClose: () => void) {
+    return items.map((child) => {
+      if (child.children && child.children.length > 0) {
+        return (
+          <div key={child.label}>
+            <div className="px-4 pt-3 pb-1 text-[10px] font-sans font-semibold text-gold/60 uppercase tracking-wider">{child.label}</div>
+            {child.children.map((sub) => {
+              const subHref = sub.path || sub.href || '#';
+              return (
+                <a
+                  key={sub.label}
+                  href={subHref}
+                  onClick={(e) => { if (sub.path) { e.preventDefault(); onClose(); }}}
+                  className="w-full text-left block pl-8 pr-4 py-2 hover:bg-white/5 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-inset focus-visible:ring-2 focus-visible:ring-gold"
+                >
+                  <span className="text-sm font-sans text-cream/70">{sub.label}</span>
+                </a>
+              );
+            })}
+          </div>
+        );
+      }
+      if (child.path) {
+        return (
+          <Link
+            key={child.label}
+            to={child.path}
+            onClick={onClose}
+            className="w-full text-left block px-4 py-3 hover:bg-white/5 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-inset focus-visible:ring-2 focus-visible:ring-gold"
+          >
+            <span className="text-sm font-sans font-medium text-cream/90">{child.label}</span>
+            {child.description && (
+              <span className="block text-xs text-cream/40 mt-0.5">{child.description}</span>
+            )}
+          </Link>
+        );
+      }
+      return (
+        <button
+          key={child.label}
+          onClick={() => { handleNavClick(child.href); onClose(); }}
+          className="w-full text-left block px-4 py-3 hover:bg-white/5 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-inset focus-visible:ring-2 focus-visible:ring-gold"
+        >
+          <span className="text-sm font-sans font-medium text-cream/90">{child.label}</span>
+          {child.description && (
+            <span className="block text-xs text-cream/40 mt-0.5">{child.description}</span>
+          )}
+        </button>
+      );
+    });
+  }
 
   return (
     <>
@@ -98,12 +159,31 @@ export function Navbar() {
               const isOpen = openDropdown === link.label;
               const active = link.path ? activePath === link.path : activePath === link.href;
 
+              const handleMouseEnter = () => {
+                if (closeTimer.current) {
+                  clearTimeout(closeTimer.current);
+                  closeTimer.current = null;
+                }
+                setOpenDropdown(link.label);
+              };
+
+              const handleMouseLeave = () => {
+                closeTimer.current = setTimeout(() => {
+                  setOpenDropdown(null);
+                }, 200);
+              };
+
               return (
-                <div key={link.label} className="relative group/nav">
+                <div
+                  key={link.label}
+                  className="relative group/nav"
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                >
                   {hasDropdown ? (
                     <button
                       onClick={() => setOpenDropdown(isOpen ? null : link.label)}
-                      onMouseEnter={() => setOpenDropdown(link.label)}
+                      onMouseEnter={handleMouseEnter}
                       className={cn(
                         'flex items-center gap-1 px-3 py-2 rounded-card text-sm',
                         'font-sans font-medium tracking-wide',
@@ -167,34 +247,13 @@ export function Navbar() {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 6, scale: 0.97 }}
                         transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
-                        className="absolute top-full left-0 mt-1 min-w-[220px] bg-maroon-dark border border-gold/15 rounded-card-lg shadow-hero-glow overflow-hidden"
-                        onMouseLeave={() => setOpenDropdown(null)}
+                        className={cn(
+                          'absolute top-full left-0 mt-1 bg-maroon-dark border border-gold/15 rounded-card-lg shadow-hero-glow overflow-hidden',
+                          link.label === 'Facilities' ? 'min-w-[140px]' : 'min-w-[220px]',
+                        )}
                       >
                         <div className="flex flex-col">
-                          {link.children!.map((child) => {
-                            const childClick = () => setOpenDropdown(null);
-                            if (child.path) {
-                              return (
-                                <Link
-                                  key={child.label}
-                                  to={child.path}
-                                  onClick={childClick}
-                                  className="w-full text-left block px-4 py-3 hover:bg-white/5 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-inset focus-visible:ring-2 focus-visible:ring-gold"
-                                >
-                                  <span className="text-sm font-sans font-medium text-cream/90">{child.label}</span>
-                                </Link>
-                              );
-                            }
-                            return (
-                              <button
-                                key={child.label}
-                                onClick={() => { handleNavClick(child.href); childClick(); }}
-                                className="w-full text-left block px-4 py-3 hover:bg-white/5 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-inset focus-visible:ring-2 focus-visible:ring-gold"
-                              >
-                                <span className="text-sm font-sans font-medium text-cream/90">{child.label}</span>
-                              </button>
-                            );
-                          })}
+                          {renderNavChildren(link.children!, () => setOpenDropdown(null))}
                         </div>
                       </motion.div>
                     )}
@@ -274,21 +333,7 @@ export function Navbar() {
 
                   {hasDropdown && isOpen && (
                     <div className="bg-black/20">
-                      {link.children!.map((child) => {
-                        const href = child.path || child.href || '#';
-                        return (
-                          <a
-                            key={child.label}
-                            href={href}
-                            className="block w-full pl-10 pr-section-x-sm py-2.5 text-sm font-sans text-cream/70 hover:text-cream hover:bg-white/5 transition-colors duration-200"
-                          >
-                            <span>{child.label}</span>
-                            {child.description && (
-                              <span className="block text-xs text-cream/40 mt-0.5">{child.description}</span>
-                            )}
-                          </a>
-                        );
-                      })}
+                      {renderMobileChildren(link.children!, () => setMobileOpen(false))}
                     </div>
                   )}
                 </div>
@@ -299,6 +344,43 @@ export function Navbar() {
       )}
     </>
   );
+}
+
+function renderMobileChildren(items: { label: string; href?: string; path?: string; children?: { label: string; href?: string; path?: string }[] }[], onClose: () => void) {
+  return items.map((child) => {
+    if (child.children && child.children.length > 0) {
+      return (
+        <div key={child.label}>
+          <div className="pl-8 pr-section-x-sm pt-3 pb-1 text-[10px] font-sans font-semibold text-gold/50 uppercase tracking-wider">{child.label}</div>
+          {child.children.map((sub) => {
+            const subHref = sub.path || sub.href || '#';
+            return (
+              <a
+                key={sub.label}
+                href={subHref}
+                className="block w-full pl-12 pr-section-x-sm py-2 text-sm font-sans text-cream/60 hover:text-cream hover:bg-white/5 transition-colors duration-200"
+              >
+                {sub.label}
+              </a>
+            );
+          })}
+        </div>
+      );
+    }
+    const href = child.path || child.href || '#';
+    return (
+      <a
+        key={child.label}
+        href={href}
+        className="block w-full pl-8 pr-section-x-sm py-2.5 text-sm font-sans text-cream/70 hover:text-cream hover:bg-white/5 transition-colors duration-200"
+      >
+        <span>{child.label}</span>
+        {child.description && (
+          <span className="block text-xs text-cream/40 mt-0.5">{child.description}</span>
+        )}
+      </a>
+    );
+  });
 }
 
 export default Navbar;
