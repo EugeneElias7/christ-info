@@ -14,3 +14,5 @@ export { IconLabelPair } from './IconLabelPair';
 export type { IconLabelPairProps } from './IconLabelPair';
 export { AnimatedReveal } from './AnimatedReveal';
 export type { AnimatedRevealProps } from './AnimatedReveal';
+export { EmailPopup } from './EmailPopup';
+export { FacultyHover } from './FacultyHover';

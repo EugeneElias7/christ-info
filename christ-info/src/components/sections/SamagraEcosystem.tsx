@@ -3,14 +3,7 @@ import { SectionWrapper } from '../ui/SectionWrapper';
 import { getMotionVariants, fadeInUp, staggerContainer, viewportLazy } from '../../lib/animations';
 import { wings } from '../../data/samagra';
 
-const wingEmojis: Record<string, string> = {
-  'vault-vortex': '⚡',
-  shield: '🛡️',
-  vizerion: '🧠',
-  'off-topic': '✨',
-  'csc-soc': '💻',
-  wist: '👩‍💻',
-};
+
 
 export function SamagraEcosystem() {
   const containerVariants = getMotionVariants(staggerContainer);

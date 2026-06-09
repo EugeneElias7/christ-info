@@ -37,7 +37,12 @@ export function ProgrammesPage() {
                 <div className="h-2 bg-gradient-to-r from-maroon via-gold to-maroon shrink-0" />
                 <div className="p-card-p flex flex-col">
                   <h2 className="text-heading lg:text-heading-lg font-serif text-maroon">{p.shortName}</h2>
-                  <p className="text-label-sm font-sans text-charcoal/50 mt-1.5">{p.duration}</p>
+                  <div className="mt-1.5 space-y-0.5">
+                    <p className="text-label-sm font-sans text-charcoal/50">{p.duration}</p>
+                    {p.durationHons && (
+                      <p className="text-label-sm font-sans text-gold/70">{p.durationHons}</p>
+                    )}
+                  </div>
                   <p className="text-body-sm font-sans text-charcoal/60 leading-relaxed mt-3 line-clamp-4 max-w-prose">{p.description}</p>
                 </div>
               </div>

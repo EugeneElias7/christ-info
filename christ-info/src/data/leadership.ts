@@ -14,6 +14,7 @@ export interface Leader {
   isLeadership?: boolean;
   excludeFromFaculty?: boolean;
   note?: string;
+  location?: string;
 }
 
 function initials(name: string): string {
@@ -23,27 +24,6 @@ function initials(name: string): string {
 function facultyByName(name: string) {
   return rawData.faculty.find(f => f.name.toLowerCase() === name.toLowerCase());
 }
-
-// Director and Dean are campus-level (from JSON leadership array)
-const rawLeadership = rawData.leadership
-  .filter(l => l.id !== 'hod') // hod created separately from faculty data to avoid duplication
-  .map((l) => {
-    const facultyMatch = facultyByName(l.name);
-    return {
-      id: l.id,
-      name: l.name,
-      title: l.designation,
-      designation: l.designation,
-      email: facultyMatch?.email || l.email,
-      emailLink: facultyMatch?.emailLink || l.emailLink,
-      linkedin: facultyMatch?.linkedin || l.linkedin,
-      profileUrl: facultyMatch?.christProfile || l.christProfile,
-      imagePlaceholder: initials(l.name),
-      imageUrl: facultyMatch?.image || l.image || undefined,
-      isLeadership: true,
-      excludeFromFaculty: true,
-    };
-  });
 
 // HOD and Associate HOD are department-level (appear in both leadership + faculty)
 const hodRaw = rawData.faculty.find(f => f.roles.includes('hod'));
@@ -78,13 +58,60 @@ const assocHod = assocHodRaw ? {
   excludeFromFaculty: false,
 } : null;
 
+// Program coordinators extracted separately to control ordering
+const coordinatorIds = ['bca-coordinator', 'mds-coordinator', 'ai-cyber-coordinator'];
+const programCoordinators = rawData.leadership
+  .filter(l => coordinatorIds.includes(l.id))
+  .map((l) => {
+    const facultyMatch = facultyByName(l.name);
+    return {
+      id: l.id,
+      name: l.name,
+      title: l.designation,
+      designation: l.designation,
+      email: facultyMatch?.email || l.email,
+      emailLink: facultyMatch?.emailLink || l.emailLink,
+      linkedin: facultyMatch?.linkedin || l.linkedin,
+      profileUrl: facultyMatch?.christProfile || l.christProfile,
+      imagePlaceholder: initials(l.name),
+      imageUrl: facultyMatch?.image || l.image || undefined,
+      isLeadership: true,
+      excludeFromFaculty: !facultyMatch,
+    };
+  });
+
+// Campus-level leadership (director, assoc-director, dean, assoc-dean)
+const campusLeadership = rawData.leadership
+  .filter(l => l.id !== 'hod' && !coordinatorIds.includes(l.id))
+  .map((l) => {
+    const facultyMatch = facultyByName(l.name);
+    return {
+      id: l.id,
+      name: l.name,
+      title: l.designation,
+      designation: l.designation,
+      email: facultyMatch?.email || l.email,
+      emailLink: facultyMatch?.emailLink || l.emailLink,
+      linkedin: facultyMatch?.linkedin || l.linkedin,
+      profileUrl: facultyMatch?.christProfile || l.christProfile,
+      imagePlaceholder: initials(l.name),
+      imageUrl: facultyMatch?.image || l.image || undefined,
+      isLeadership: true,
+      excludeFromFaculty: !facultyMatch,
+    };
+  });
+
 // All other faculty (excluding those already handled)
 const leadershipNames = rawData.leadership.map(l => l.name.toLowerCase());
 const specialRoles = ['hod', 'assochod'];
 const otherFaculty = rawData.faculty.filter(f =>
   !leadershipNames.includes(f.name.toLowerCase()) &&
   !f.roles.some(r => specialRoles.includes(r))
-).map(f => ({
+).sort((a, b) => {
+  if (a.name === 'Dayana David') return 1;
+  if (b.name === 'Dayana David') return -1;
+  return 0;
+}).map(f => ({
   id: `faculty-${f.facultyId}`,
   name: f.name,
   title: f.designation,
@@ -98,12 +125,14 @@ const otherFaculty = rawData.faculty.filter(f =>
   isLeadership: false,
   excludeFromFaculty: false,
   note: f.note,
+  location: f.location,
 }));
 
 export const leaders: Leader[] = [
-  ...rawLeadership,
+  ...campusLeadership,
   ...(hod ? [hod] : []),
   ...(assocHod ? [assocHod] : []),
+  ...programCoordinators,
   ...otherFaculty,
 ];
 

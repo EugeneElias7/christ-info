@@ -18,14 +18,14 @@ export function UniversityExcellence() {
         initial="hidden"
         whileInView="visible"
         viewport={viewportLazy}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3"
+        className="flex flex-wrap justify-center gap-3"
       >
         {stats.map((stat, i) => (
           <motion.div
             key={stat.id}
             variants={getMotionVariants(fadeInUp)}
             transition={{ delay: i * 0.05 }}
-            className="bg-white border border-cream-border rounded-card-lg shadow-card-white px-5 py-4 flex flex-col justify-center transition-all duration-300 hover:border-gold/30 hover:shadow-card-hover"
+            className="bg-white border border-cream-border rounded-card-lg shadow-card-white px-5 py-4 flex flex-col justify-center text-center transition-all duration-300 hover:border-gold/30 hover:shadow-card-hover w-[160px]"
           >
             <span className="text-2xl lg:text-3xl font-serif font-bold text-gold leading-none">{stat.value}</span>
             <span className="text-label-sm font-sans text-charcoal/60 mt-1">{stat.label}</span>

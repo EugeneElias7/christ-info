@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { Instagram } from 'lucide-react'
 import { wings } from '../data/samagra'
 import { getMotionVariants, fadeInUp, viewportLazy } from '../lib/animations'
 
@@ -46,6 +47,15 @@ export function SamagraPage() {
           </div>
           <p className="text-body-sm text-cream/60 font-sans mt-2 max-w-lg">
             Seven wings, one vision — a student innovation ecosystem under the Computer Science Department.
+            <a
+              href="https://www.instagram.com/samagra_cs/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 ml-2 text-cream/50 hover:text-gold transition-colors duration-250 align-middle"
+              aria-label="SAMAGRA on Instagram"
+            >
+              <Instagram size={16} strokeWidth={1.5} />
+            </a>
           </p>
         </div>
       </div>
@@ -98,10 +108,10 @@ export function SamagraPage() {
                 </div>
                 <h3 className="text-sm font-serif font-bold text-maroon mt-2 leading-tight">{wing.name}</h3>
                 <p className="text-[10px] font-sans text-charcoal/50 leading-tight">{wing.domain}</p>
-                <div className="max-h-0 overflow-hidden transition-all duration-700 ease-out"
-                  style={{ maxHeight: isHovered ? '200px' : '0', opacity: isHovered ? 1 : 0 }}
-                >
-                  <p className="text-xs font-sans text-charcoal/60 mt-1.5 leading-relaxed">
+                <div className="overflow-hidden pt-1">
+                  <p className="text-xs font-sans text-charcoal/60 leading-relaxed transition-all duration-700 ease-out"
+                    style={{ opacity: isHovered ? 1 : 0, transform: isHovered ? 'translateY(0)' : 'translateY(4px)' }}
+                  >
                     {info.description}
                   </p>
                 </div>

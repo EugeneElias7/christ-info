@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Linkedin, Mail, ExternalLink } from 'lucide-react';
 import { SectionWrapper } from '../ui/SectionWrapper';
+import { EmailPopup } from '../ui/EmailPopup';
 import { getMotionVariants, fadeInUp, staggerContainer, viewportLazy } from '../../lib/animations';
 import { leadershipTeam } from '../../data/leadership';
 
@@ -96,15 +97,10 @@ export function LeadershipStrip() {
                     <Linkedin size={10} strokeWidth={1.5} /> LinkedIn
                   </a>
                 )}
-                {leader.emailLink && (
-                  <a
-                    href={leader.emailLink}
-                    onClick={(e) => e.stopPropagation()}
-                    className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded bg-gold/10 text-[10px] font-sans font-medium leading-none text-gold/80 hover:bg-gold hover:text-maroon-dark transition-all"
-                    aria-label={`Email ${leader.name}`}
-                  >
-                    <Mail size={10} strokeWidth={1.5} /> Email
-                  </a>
+                {leader.email && (
+                  <EmailPopup email={leader.email}>
+                    <Mail size={10} strokeWidth={1.5} />
+                  </EmailPopup>
                 )}
               </div>
             </div>

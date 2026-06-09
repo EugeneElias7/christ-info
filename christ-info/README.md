@@ -294,3 +294,4 @@ Recommended: `https://christ-info.vercel.app`
 
 Built by **Eugene Elias** — Student of Computer Science  
 CHRIST (Deemed to be University), Yeshwantpur Campus, Bangalore
+Last Updated: June 2026
