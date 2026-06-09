@@ -63,8 +63,8 @@ function FacultyCard({ faculty }: { faculty: typeof facultyOnly[0] }) {
         {faculty.location && (
           <div className="mt-2 pt-2 border-t border-dashed border-gold/20">
             <div className="flex items-start gap-1.5">
-              <MapPin size={11} strokeWidth={1.5} className="text-gold/60 mt-0.5 shrink-0" />
-              <p className="text-[9px] font-sans text-charcoal/50 leading-relaxed">{faculty.location}</p>
+              <MapPin size={13} strokeWidth={1.5} className="text-gold/60 mt-0.5 shrink-0" />
+              <p className="text-[11px] font-sans text-charcoal/60 leading-relaxed">{faculty.location}</p>
             </div>
           </div>
         )}
@@ -76,15 +76,15 @@ function FacultyCard({ faculty }: { faculty: typeof facultyOnly[0] }) {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={(e) => e.stopPropagation()}
-                    className="inline-flex items-center gap-1 px-2 py-1 rounded bg-blue-600 text-white text-[8px] font-sans font-medium leading-none hover:bg-blue-700 transition-colors"
+                    className="inline-flex items-center gap-1 px-2 py-1 rounded bg-blue-600 text-white text-[10px] font-sans font-medium leading-none hover:bg-blue-700 transition-colors"
                     aria-label={`${faculty.name} on LinkedIn`}
                   >
-                    <Linkedin size={8} strokeWidth={1.5} /> LinkedIn
+                    <Linkedin size={10} strokeWidth={1.5} /> LinkedIn
                   </a>
                 )}
                 {faculty.email && (
                   <EmailPopup email={faculty.email}>
-                    <Mail size={8} strokeWidth={1.5} />
+                    <Mail size={10} strokeWidth={1.5} />
                   </EmailPopup>
                 )}
               </div>
@@ -334,7 +334,7 @@ export function FacultyPage() {
                       </div>
                     </div>
                     <div className="mt-3 p-2.5 rounded-card-lg bg-gold/5 border border-gold/20">
-                      <p className="text-[9px] font-sans text-charcoal/50">📍 Room 201, Block B</p>
+                      <p className="text-[11px] font-sans text-charcoal/60">📍 Room 201, Block B</p>
                     </div>
                   </div>
                 </div>

@@ -25,11 +25,11 @@ export function EmailPopup({ email, children }: EmailPopupProps) {
         onClick={copy}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="inline-flex items-center gap-1 px-1.5 py-1 rounded-[4px] bg-gold/10 text-gold/70 text-[8px] font-sans font-medium hover:bg-gold hover:text-maroon-dark transition-all cursor-pointer leading-none"
+        className="inline-flex items-center gap-1 px-2 py-1.5 rounded-[4px] bg-gold/10 text-gold/70 text-[10px] font-sans font-medium hover:bg-gold hover:text-maroon-dark transition-all cursor-pointer leading-none"
       >
         <span className="flex items-center gap-1">
           {children}
-          {hovered && <span className="text-[7px] font-sans transition-all duration-200">Click to Copy</span>}
+          {hovered && <span className="text-[9px] font-sans transition-all duration-200">Click to Copy</span>}
         </span>
       </button>
 

@@ -49,7 +49,7 @@ export function SocialSidebar() {
 
   return (
     <div
-      className="fixed right-0 top-1/2 -translate-y-1/2 z-[60] hidden lg:block"
+      className="fixed right-0 top-1/2 -translate-y-1/2 z-[60] block"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
