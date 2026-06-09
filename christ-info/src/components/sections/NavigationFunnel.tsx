@@ -2,13 +2,13 @@ import { motion } from 'framer-motion';
 import { GraduationCap, FlaskConical, Microscope, Trophy, Calendar, Briefcase, ArrowRight } from 'lucide-react';
 import { getMotionVariants, fadeInUp, staggerContainer } from '../../lib/animations';
 
-const csIcons = [
-  { icon: GraduationCap, label: 'Academics' },
-  { icon: FlaskConical,  label: 'Labs' },
-  { icon: Microscope,    label: 'Research' },
-  { icon: Trophy,        label: 'Achievements' },
-  { icon: Calendar,      label: 'Events' },
-  { icon: Briefcase,     label: 'Placements' },
+const csHighlights = [
+  { icon: GraduationCap, label: 'Industry-Focused Curriculum' },
+  { icon: FlaskConical,  label: 'Cutting-Edge Lab' },
+  { icon: Microscope,    label: 'Impactful Research' },
+  { icon: Trophy,        label: 'Encouraging Achievements' },
+  { icon: Calendar,      label: 'Result-Oriented Events' },
+  { icon: Briefcase,     label: 'Support for Placements' },
 ] as const;
 
 export function NavigationFunnel() {
@@ -105,13 +105,13 @@ export function NavigationFunnel() {
                   <div className="hidden lg:block w-px h-20 bg-cream-border flex-shrink-0" />
 
                   <div className="flex-1 min-w-0 mb-5 lg:mb-0">
-                    <div className="grid grid-cols-3 sm:grid-cols-6 gap-1.5">
-                      {csIcons.map((item) => {
-                        const IconComponent = item.icon;
+                    <div className="flex flex-wrap gap-2">
+                      {csHighlights.map((item) => {
+                        const Icon = item.icon;
                         return (
-                          <div key={item.label} className="flex flex-col items-center gap-0.5 py-2 px-1 rounded-card bg-charcoal/[0.03] border border-cream-border transition-all duration-250 hover:border-gold/30 hover:bg-gold/[0.03]">
-                            <IconComponent size={14} strokeWidth={1.5} className="text-gold/60" />
-                            <span className="text-[9px] font-sans font-medium text-charcoal/50 text-center leading-tight">{item.label}</span>
+                          <div key={item.label} className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-gold/[0.06]">
+                            <Icon size={11} strokeWidth={1.5} className="text-gold/70" />
+                            <span className="text-[10px] font-sans text-charcoal/60 leading-tight">{item.label}</span>
                           </div>
                         );
                       })}
