@@ -196,7 +196,7 @@ export function FacultyPage() {
       </div>
 
       <div className="sticky top-nav-h z-10 bg-cream/95 backdrop-blur-sm border-b border-cream-border">
-        <div className="mx-auto max-w-7xl px-section-x-sm sm:px-section-x-md lg:px-section-x py-3 pb-2 relative">
+        <div className="mx-auto max-w-7xl px-section-x-sm sm:px-section-x-md lg:px-section-x py-3 relative">
           <div className="relative w-full sm:w-64 mb-2 sm:mb-0 sm:absolute sm:right-4 sm:top-3">
             <Search size={14} strokeWidth={1.5} className="absolute left-3 top-1/2 -translate-y-1/2 text-charcoal/30" />
             <input
@@ -207,20 +207,47 @@ export function FacultyPage() {
               className="w-full pl-9 pr-3 py-2 rounded-card bg-white border border-cream-border text-sm font-sans text-charcoal placeholder:text-charcoal/30 focus:outline-none focus:border-gold/50 transition-colors"
             />
           </div>
-          <div className="flex flex-wrap gap-2 pt-1 sm:pt-0 sm:pr-[18rem] overflow-visible">
-            {filters.map((f) => (
-              <button
-                key={f}
-                onClick={() => setActiveFilter(f)}
-                className={`px-3 py-1.5 rounded-card text-label-sm font-sans font-medium whitespace-nowrap transition-all duration-250 ${
-                  activeFilter === f
-                    ? 'bg-maroon text-cream'
-                    : 'text-charcoal/50 hover:text-maroon hover:bg-maroon/5'
-                }`}
-              >
-                {f}
-              </button>
-            ))}
+
+          <div className="relative sm:pr-[18rem]">
+            {/* Fade gradient indicator — only visible on mobile when content overflows */}
+            <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-10 z-[1] bg-gradient-to-l from-cream via-cream/90 to-transparent sm:hidden" />
+
+            <div
+              className="flex overflow-x-auto gap-1.5 pt-1 sm:pt-0 scroll-smooth whitespace-nowrap"
+              style={{
+                scrollbarWidth: 'thin',
+                WebkitOverflowScrolling: 'touch',
+                msOverflowStyle: '-ms-autohiding-scrollbar',
+              }}
+            >
+              {filters.map((f) => (
+                <button
+                  key={f}
+                  onClick={() => setActiveFilter(f)}
+                  className={`px-3 py-1.5 rounded-card text-label-sm font-sans font-medium whitespace-nowrap transition-all duration-250 flex-shrink-0 snap-start ${
+                    activeFilter === f
+                      ? 'bg-maroon text-cream shadow-sm'
+                      : 'text-charcoal/50 hover:text-maroon hover:bg-maroon/5'
+                  }`}
+                >
+                  {f}
+                </button>
+              ))}
+            </div>
+
+            {/* Custom thin scrollbar style for webkit */}
+            <style>{`
+              .sticky .overflow-x-auto::-webkit-scrollbar {
+                height: 3px;
+              }
+              .sticky .overflow-x-auto::-webkit-scrollbar-track {
+                background: transparent;
+              }
+              .sticky .overflow-x-auto::-webkit-scrollbar-thumb {
+                background: rgba(212, 160, 23, 0.25);
+                border-radius: 4px;
+              }
+            `}</style>
           </div>
         </div>
       </div>
