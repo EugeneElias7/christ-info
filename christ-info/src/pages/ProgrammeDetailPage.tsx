@@ -89,7 +89,17 @@ export function ProgrammeDetailPage() {
                     <div className="flex items-center gap-2.5 mb-4">
                       <span className="text-[10px] font-sans font-semibold text-gold uppercase tracking-wider px-2 py-0.5 rounded bg-gold/10">Class</span>
                       <span className="text-body-sm font-sans text-charcoal/40">•</span>
-                      <h3 className="text-heading-sm font-serif text-maroon leading-tight">{section.name}</h3>
+                      {(() => {
+                        const spaceIdx = section.name.indexOf(' ');
+                        const yearNum = spaceIdx > 0 ? section.name.slice(0, spaceIdx) : '';
+                        const rest = spaceIdx > 0 ? section.name.slice(spaceIdx + 1) : section.name;
+                        return (
+                          <>
+                            <span className="text-lg font-serif font-bold text-gold leading-none">{yearNum}</span>
+                            <h3 className="text-heading-sm font-serif text-maroon leading-tight">{rest}</h3>
+                          </>
+                        );
+                      })()}
                     </div>
 
                     <div className="flex items-center gap-4 mb-4 pb-4 border-b border-cream-border">

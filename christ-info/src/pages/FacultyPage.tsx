@@ -196,8 +196,18 @@ export function FacultyPage() {
       </div>
 
       <div className="sticky top-nav-h z-10 bg-cream/95 backdrop-blur-sm border-b border-cream-border">
-        <div className="mx-auto max-w-7xl px-section-x-sm sm:px-section-x-md lg:px-section-x py-3 flex flex-col sm:flex-row gap-3 items-start sm:items-center justify-between">
-          <div className="flex gap-1 overflow-x-auto">
+        <div className="mx-auto max-w-7xl px-section-x-sm sm:px-section-x-md lg:px-section-x py-3 pb-2 relative">
+          <div className="relative w-full sm:w-64 mb-2 sm:mb-0 sm:absolute sm:right-4 sm:top-3">
+            <Search size={14} strokeWidth={1.5} className="absolute left-3 top-1/2 -translate-y-1/2 text-charcoal/30" />
+            <input
+              type="text"
+              placeholder="Search faculty..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full pl-9 pr-3 py-2 rounded-card bg-white border border-cream-border text-sm font-sans text-charcoal placeholder:text-charcoal/30 focus:outline-none focus:border-gold/50 transition-colors"
+            />
+          </div>
+          <div className="flex flex-wrap gap-2 pt-1 sm:pt-0 sm:pr-[18rem] overflow-visible">
             {filters.map((f) => (
               <button
                 key={f}
@@ -211,16 +221,6 @@ export function FacultyPage() {
                 {f}
               </button>
             ))}
-          </div>
-          <div className="relative w-full sm:w-64">
-            <Search size={14} strokeWidth={1.5} className="absolute left-3 top-1/2 -translate-y-1/2 text-charcoal/30" />
-            <input
-              type="text"
-              placeholder="Search faculty..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-3 py-2 rounded-card bg-white border border-cream-border text-sm font-sans text-charcoal placeholder:text-charcoal/30 focus:outline-none focus:border-gold/50 transition-colors"
-            />
           </div>
         </div>
       </div>
