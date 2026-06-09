@@ -1,7 +1,8 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowLeft, Users, MapPin, ExternalLink } from 'lucide-react'
+import { ArrowLeft, ExternalLink } from 'lucide-react'
 import { programmes } from '../data/programmes'
+import { leaders } from '../data/leadership'
 import { getMotionVariants, fadeInUp, staggerContainer } from '../lib/animations'
 
 export function ProgrammeDetailPage() {
@@ -41,7 +42,12 @@ export function ProgrammeDetailPage() {
           <p className="text-eyebrow font-sans text-gold tracking-widest uppercase mb-1">{programme.shortName}</p>
           <h1 className="text-display-sm font-serif text-cream leading-tight max-w-2xl">{programme.name}</h1>
           <p className="text-body-sm text-cream/70 font-sans mt-2 max-w-xl">{programme.description}</p>
-          <p className="text-label-sm font-sans text-gold/70 mt-2">{programme.duration}</p>
+          <div className="mt-2 space-y-0.5">
+            <p className="text-label-sm font-sans text-gold/70">{programme.duration}</p>
+            {programme.durationHons && (
+              <p className="text-label-sm font-sans text-gold/50">{programme.durationHons}</p>
+            )}
+          </div>
           {programme.exploreUrl && (
             <a
               href={programme.exploreUrl}
@@ -61,39 +67,67 @@ export function ProgrammeDetailPage() {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
           >
-            {programme.sections.map((section, i) => (
-              <motion.div
-                key={section.name}
-                variants={getMotionVariants(fadeInUp)}
-                transition={{ delay: i * 0.08 }}
-                className="bg-white border border-cream-border rounded-card-lg shadow-card-white p-card-p"
-              >
-                <div className="flex items-center gap-2 mb-3">
-                  <div className="w-8 h-8 rounded-full bg-maroon/5 flex items-center justify-center">
-                    <span className="text-label font-sans font-bold text-maroon">{section.name.replace('Section ', '')}</span>
-                  </div>
-                  <h2 className="text-heading-sm font-serif text-charcoal">Section {section.name.replace('Section ', '')}</h2>
-                </div>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3 text-body-sm font-sans text-charcoal/60">
-                    <MapPin size={14} strokeWidth={1.5} className="text-gold flex-shrink-0" />
-                    <span>Room <strong className="text-charcoal/80">{section.roomNo}</strong></span>
-                  </div>
-                  <div className="flex items-center gap-3 text-body-sm font-sans text-charcoal/60">
-                    <span className="w-7 h-7 rounded-full bg-maroon/5 flex items-center justify-center text-[10px] font-bold text-maroon flex-shrink-0">CT</span>
-                    <span>Class Teacher: <strong className="text-charcoal/80">{section.classTeacher}</strong></span>
-                  </div>
-                  {section.strength && (
-                    <div className="flex items-center gap-3 text-body-sm font-sans text-charcoal/60">
-                      <Users size={14} strokeWidth={1.5} className="text-gold flex-shrink-0" />
-                      <span><strong className="text-charcoal/80">{section.strength}</strong> Students</span>
+            {programme.sections.map((section, i) => {
+              const teacher = leaders.find(l =>
+                l.name.toLowerCase() === section.classTeacher.toLowerCase() ||
+                l.name.toLowerCase().startsWith(section.classTeacher.toLowerCase()) ||
+                section.classTeacher.toLowerCase().startsWith(l.name.toLowerCase().split(' ')[0])
+              )
+
+              return (
+                <motion.div
+                  key={section.name}
+                  variants={getMotionVariants(fadeInUp)}
+                  transition={{ delay: i * 0.08 }}
+                  className="group bg-white border border-cream-border rounded-card-lg shadow-card-white overflow-hidden transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1"
+                >
+                  <div className="h-[3px] bg-gradient-to-r from-gold/60 via-gold to-gold/60" />
+
+                  <div className="p-5">
+                    <div className="flex items-center gap-2.5 mb-4">
+                      <span className="text-[10px] font-sans font-semibold text-gold uppercase tracking-wider px-2 py-0.5 rounded bg-gold/10">Class</span>
+                      <span className="text-body-sm font-sans text-charcoal/40">•</span>
+                      <h3 className="text-heading-sm font-serif text-maroon leading-tight">{section.name}</h3>
                     </div>
-                  )}
-                </div>
-              </motion.div>
-            ))}
+
+                    <div className="flex items-center gap-4 mb-4 pb-4 border-b border-cream-border">
+                      <div className="w-20 h-28 rounded-lg overflow-hidden bg-charcoal/5 ring-2 ring-gold/20 flex-shrink-0">
+                        {teacher?.imageUrl ? (
+                          <img src={teacher.imageUrl} alt={teacher.name} className="w-full h-full object-cover object-center" />
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-charcoal to-charcoal-mid">
+                            <span className="text-lg font-serif font-bold text-white/30">
+                              {section.classTeacher.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase()}
+                            </span>
+                          </div>
+                        )}
+                      </div>
+                      <div className="min-w-0">
+                        <p className="text-base font-sans font-semibold text-charcoal leading-snug">{section.classTeacher}</p>
+                        <p className="text-xs font-sans text-charcoal/50 mt-0.5">Class Teacher</p>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-3 gap-3">
+                      <div className="text-center">
+                        <p className="text-label-sm font-sans font-semibold text-charcoal">{section.roomNo}</p>
+                        <p className="text-[10px] font-sans text-charcoal/40 mt-0.5">Room No</p>
+                      </div>
+                      <div className="text-center border-x border-cream-border">
+                        <p className="text-label-sm font-sans font-semibold text-charcoal">{section.strength}</p>
+                        <p className="text-[10px] font-sans text-charcoal/40 mt-0.5">Students</p>
+                      </div>
+                      <div className="text-center">
+                        <p className="text-label-sm font-sans font-semibold text-charcoal">{section.floor || '—'}</p>
+                        <p className="text-[10px] font-sans text-charcoal/40 mt-0.5">Floor</p>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              )
+            })}
           </motion.div>
         </div>
       )}

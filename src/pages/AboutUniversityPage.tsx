@@ -9,6 +9,7 @@ import { RulesSection } from '../components/sections/RulesSection'
 
 const tabs = [
   { id: 'vision-mission', label: 'Vision & Mission' },
+  { id: 'graduate-attributes', label: 'Graduate Attributes' },
   { id: 'founder', label: 'Founder' },
   { id: 'history', label: 'History' },
   { id: 'anthem', label: 'Anthem' },
@@ -88,28 +89,30 @@ export function AboutUniversityPage() {
             </p>
           </motion.div>
 
-          <motion.div variants={getMotionVariants(fadeInUp)}>
+          <motion.div variants={getMotionVariants(fadeInUp)} className="mb-10">
             <p className="text-eyebrow font-sans text-gold tracking-widest uppercase mb-2">Our Mission</p>
             <h2 className="text-display-sm font-serif text-maroon mb-4">Mission</h2>
-            <ul className="space-y-3">
-              {visionMission.mission.map((item, i) => (
-                <li key={i} className="flex items-start gap-3 text-body font-sans text-charcoal/70">
-                  <span className="w-1.5 h-1.5 rounded-full bg-gold mt-2.5 flex-shrink-0" />
-                  {item}
-                </li>
-              ))}
-            </ul>
+            <p className="text-body font-sans text-charcoal/70 leading-relaxed">
+              {visionMission.mission}
+            </p>
           </motion.div>
 
-          <motion.div variants={getMotionVariants(fadeInUp)} className="mt-10">
-            <h3 className="text-heading font-serif text-maroon mb-4">Core Values</h3>
-            <div className="flex flex-wrap gap-2">
-              {visionMission.coreValues.map((v) => (
-                <span key={v} className="text-label-sm font-sans text-maroon bg-maroon/5 px-3 py-1.5 rounded-card border border-maroon/10">
-                  {v}
-                </span>
+          <motion.div id="graduate-attributes" variants={getMotionVariants(fadeInUp)}>
+            <p className="text-eyebrow font-sans text-gold tracking-widest uppercase mb-2">Graduate Attributes</p>
+            <h2 className="text-display-sm font-serif text-maroon mb-4">Graduate Attributes</h2>
+            <div className="text-body font-sans text-charcoal/70 leading-relaxed space-y-4">
+              {visionMission.graduateAttributes.split('\n\n').map((para, i) => (
+                <p key={i}>{para}</p>
               ))}
             </div>
+            <a
+              href="https://christuniversity.in/uploads/userfiles/file/GRADUATE%20ATTRIBUTES.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mt-6 px-5 py-2.5 rounded-pill bg-gold/10 text-gold text-label-sm font-sans font-medium hover:bg-gold hover:text-maroon-dark transition-all duration-250"
+            >
+              Know More
+            </a>
           </motion.div>
         </motion.div>
       </section>
@@ -142,6 +145,14 @@ export function AboutUniversityPage() {
               <blockquote className="text-body-lg font-sans text-charcoal/70 leading-relaxed italic border-l-[3px] border-gold pl-5">
                 "{founderMessage.message}"
               </blockquote>
+              <a
+                href="https://christuniversity.in/founder"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 mt-6 px-5 py-2.5 rounded-pill bg-gold/10 text-gold text-label-sm font-sans font-medium hover:bg-gold hover:text-maroon-dark transition-all duration-250"
+              >
+                Know More
+              </a>
             </motion.div>
           </motion.div>
         </div>

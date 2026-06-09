@@ -3,6 +3,7 @@ export interface ProgrammeSection {
   roomNo: string;
   classTeacher: string;
   strength?: number;
+  floor?: string;
 }
 
 export interface Programme {
@@ -10,6 +11,7 @@ export interface Programme {
   name: string;
   shortName: string;
   duration: string;
+  durationHons?: string;
   description: string;
   icon: string;
   exploreUrl: string;
@@ -22,12 +24,13 @@ export const programmes: Programme[] = [
     name: 'Bachelor of Computer Applications',
     shortName: 'BCA',
     duration: '3 Years (6 Semesters)',
+    durationHons: 'BCA (Hons / Hons with Research): 4 Years (8 Semesters)',
     description: 'Bachelor of Computer Applications (BCA) is an undergraduate program that focuses on building software professionals with strong practical and theoretical knowledge in Computer Science. The curriculum provides options for students to choose multiple electives depending on their interest of study. Interdisciplinary Courses on Mathematics, Statistics and Financial management enhance the breadth of domain knowledge.',
     icon: 'Code2',
     exploreUrl: 'https://christuniversity.in//courses/Nzc3',
     sections: [
-      { name: 'Section A', roomNo: 'CS-101', classTeacher: 'Ms. Anjana K', strength: 60 },
-      { name: 'Section B', roomNo: 'CS-102', classTeacher: 'Ms. Neethu Joy', strength: 58 },
+      { name: '1 BCA A', roomNo: 'B202', classTeacher: 'Thontadari C', strength: 65, floor: 'Second Floor' },
+      { name: '1 BCA B', roomNo: 'B203', classTeacher: 'Loveline Zeema', strength: 65, floor: 'Second Floor' },
     ],
   },
   {
@@ -39,8 +42,7 @@ export const programmes: Programme[] = [
     icon: 'BarChart3',
     exploreUrl: 'https://christuniversity.in//courses/NzQ5',
     sections: [
-      { name: 'Section A', roomNo: 'CS-201', classTeacher: 'Dr. Ritu Sharma', strength: 45 },
-      { name: 'Section B', roomNo: 'CS-202', classTeacher: 'Dr. Anil Kumar', strength: 42 },
+      { name: '1 MDS A', roomNo: 'B212', classTeacher: 'Gobinath R', strength: 65, floor: 'Second Floor' },
     ],
   },
   {
@@ -52,7 +54,7 @@ export const programmes: Programme[] = [
     icon: 'Shield',
     exploreUrl: 'https://christuniversity.in//courses/NjM5',
     sections: [
-      { name: 'Section A', roomNo: 'CS-301', classTeacher: 'Dr. BalaKrishnan C', strength: 40 },
+      { name: '1 MSc AICS', roomNo: 'B219', classTeacher: 'Kavitha S', strength: 65, floor: 'Second Floor' },
     ],
   },
   {

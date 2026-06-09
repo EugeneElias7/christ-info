@@ -11,14 +11,11 @@ export const aboutTabs: AboutTab[] = [
 ];
 
 export const visionMission = {
-  vision: 'To be a centre of excellence in higher education, nurturing individuals who contribute meaningfully to society through knowledge, values, and innovation.',
-  mission: [
-    'Provide holistic education that integrates academic excellence with moral and spiritual values.',
-    'Foster a culture of research, innovation, and critical thinking among students and faculty.',
-    'Promote social responsibility and environmental sustainability through community engagement.',
-    'Develop global competencies while preserving cultural heritage and ethical values.',
-  ],
-  coreValues: ['Faith in God', 'Moral Uprightness', 'Love of Fellow Beings', 'Social Responsibility', 'Quest for Excellence'],
+  vision: 'Excellence and Service',
+  mission: 'CHRIST (Deemed to be University) is a nurturing ground for an individual\'s holistic development to make effective contribution to society in a dynamic environment.',
+  graduateAttributes: `The Graduate Attributes of CHRIST (Deemed to be University) are focused on 'Holistic Development' or 'whole person growth.' The holistic development of a Christite is attained through academic excellence, professional competence, personal, inter-personal and societal skills. Every Graduate of CHRIST (Deemed to be University) is desired to possess the following attributes:
+
+The University actualizes the Graduate Attributes through curricula, courses on Personal, Interpersonal and Societal Skills, co-curricular and extra-curricular activities organised for holistic student experience and life, Student Council, centres and offices such as Centre for Social Action, Student Welfare Office, initiatives such as Peer Education Programme, and intra-University competitions.`,
 };
 
 export const founderMessage = {
@@ -38,12 +35,13 @@ export const historyNarrative = {
 export const history = [
   { year: '1969', event: 'CHRIST College founded by the CMI congregation in Bangalore.', description: 'Inaugurated with a vision to provide value-based higher education.' },
   { year: '2004', event: 'Autonomy conferred by UGC.', description: 'Recognized for academic excellence and institutional maturity.' },
-  { year: '2008', event: 'Declared a Deemed to be University.', description: 'Ministry of HRD confers deemed status under Section 3 of UGC Act.' },
+  { year: '2008', event: 'Declared as Deemed to be University.', description: 'Ministry of HRD confers deemed status under Section 3 of UGC Act.' },
   { year: '2013', event: 'NAAC re-accreditation with A+ grade.', description: 'Highest grade awarded, placing CHRIST among top institutions.' },
-  { year: '2016', event: 'Yeshwantpur Campus established.', description: 'New campus to accommodate growing programmes in Computer Science.' },
-  { year: '2023', event: 'NIRF Rank 63 among Indian universities.', description: 'Consistent improvement in national rankings.' },
-  { year: '2024', event: 'NAAC A+ re-accreditation (4th cycle).', description: 'Sustained excellence in academic and administrative practices.' },
-  { year: '2026', event: 'WURI World University Rankings for Innovation.', description: 'Ranked among the top innovative universities globally in WURI 2026.' },
+  { year: '2017', event: 'Land bought in Nagasandra, Tumkur Road, Bangalore, Karnataka.', description: 'Site acquired for future campus development.' },
+  { year: '2022', event: 'Blessing and Inauguration of Bangalore Yeshwanthpur Campus.', description: 'New campus inaugurated to accommodate growing programmes in Computer Science.' },
+  { year: '2023', event: 'University ranked 67th in NIRF among top 100 universities in India.', description: 'Consistent improvement in national rankings.' },
+  { year: '2024', event: 'BCA programmes brought under AICTE.', description: 'Academic programmes aligned with AICTE standards.' },
+  { year: '2026', event: 'Introduction of BCA Honors / Honors with Research.', description: 'Enhanced curriculum with research-oriented pathways for undergraduate students.' },
 ];
 
 export const universityAnthem = {

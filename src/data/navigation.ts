@@ -13,6 +13,19 @@ export interface FooterColumn {
 export const navLinks: NavLink[] = [
   { label: 'Home', href: '/', path: '/' },
   {
+    label: 'About University',
+    href: '/about-university',
+    path: '/about-university',
+    children: [
+      { label: 'Vision & Mission', href: '/about-university#vision-mission', path: '/about-university#vision-mission' },
+      { label: 'Graduate Attributes', href: '/about-university#graduate-attributes', path: '/about-university#graduate-attributes' },
+      { label: 'Founder Message', href: '/about-university#founder', path: '/about-university#founder' },
+      { label: 'History', href: '/about-university#history', path: '/about-university#history' },
+      { label: 'University Anthem', href: '/about-university#anthem', path: '/about-university#anthem' },
+      { label: 'Rules & Regulations', href: '/about-university#rules', path: '/about-university#rules' },
+    ],
+  },
+  {
     label: 'Programmes',
     href: '/programmes',
     path: '/programmes',
@@ -24,19 +37,7 @@ export const navLinks: NavLink[] = [
     ],
   },
   { label: 'Faculty', href: '/faculty', path: '/faculty' },
-  {
-    label: 'About University',
-    href: '/about-university',
-    path: '/about-university',
-    children: [
-      { label: 'Vision & Mission', href: '/about-university#vision-mission', path: '/about-university#vision-mission' },
-      { label: 'Founder Message', href: '/about-university#founder', path: '/about-university#founder' },
-      { label: 'History', href: '/about-university#history', path: '/about-university#history' },
-      { label: 'University Anthem', href: '/about-university#anthem', path: '/about-university#anthem' },
-      { label: 'Rules & Regulations', href: '/about-university#rules', path: '/about-university#rules' },
-    ],
-  },
-  { label: 'Samagra Club', href: '/samagra', path: '/samagra' },
+  { label: 'Samagra Association', href: '/samagra', path: '/samagra' },
 ];
 
 export const footerColumns: FooterColumn[] = [
@@ -66,7 +67,7 @@ export const footerColumns: FooterColumn[] = [
       { label: 'CHRIST University', href: 'https://christuniversity.in/' },
       { label: 'Yeshwantpur Campus', href: 'https://byc.christuniversity.in/' },
       { label: 'CS Department', href: 'https://christuniversity.in/departments/yeshwanthpur-campus/school-of-sciences/computer-science' },
-      { label: 'Samagra Club', href: '/samagra' },
+      { label: 'Samagra Association', href: '/samagra' },
     ],
   },
 ];

@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Search, Linkedin, Mail, ExternalLink, ClipboardList } from 'lucide-react'
+import { Search, Linkedin, Mail, ExternalLink, ClipboardList, MapPin } from 'lucide-react'
 import { facultyOnly, leadershipTeam } from '../data/leadership'
 import { getMotionVariants, fadeInUp, staggerContainer } from '../lib/animations'
+import { EmailPopup } from '../components/ui/EmailPopup'
 
-const filters = ['All', 'Professors', 'Associate Professors', 'Assistant Professors'] as const
+const filters = ['All', 'Professors', 'Associate Professors', 'Assistant Professors', 'Academic Support'] as const
 
 function FacultyCard({ faculty }: { faculty: typeof facultyOnly[0] }) {
   return (
@@ -55,6 +56,15 @@ function FacultyCard({ faculty }: { faculty: typeof facultyOnly[0] }) {
           </div>
         )}
 
+        {faculty.location && (
+          <div className="mt-2 pt-2 border-t border-dashed border-gold/20">
+            <div className="flex items-start gap-1.5">
+              <MapPin size={11} strokeWidth={1.5} className="text-gold/60 mt-0.5 shrink-0" />
+              <p className="text-[9px] font-sans text-charcoal/50 leading-relaxed">{faculty.location}</p>
+            </div>
+          </div>
+        )}
+
               <div className="flex items-center gap-1.5 mt-2 pt-2 border-t border-cream-border">
                 {faculty.linkedin && (
                   <a
@@ -68,15 +78,10 @@ function FacultyCard({ faculty }: { faculty: typeof facultyOnly[0] }) {
                     <Linkedin size={8} strokeWidth={1.5} /> LinkedIn
                   </a>
                 )}
-                {faculty.emailLink && (
-                  <a
-                    href={faculty.emailLink}
-                    onClick={(e) => e.stopPropagation()}
-                    className="inline-flex items-center gap-1 px-2 py-1 rounded bg-gold/10 text-[8px] font-sans font-medium leading-none text-gold/70 hover:bg-gold hover:text-maroon-dark transition-all"
-                    aria-label={`Email ${faculty.name}`}
-                  >
-                    <Mail size={8} strokeWidth={1.5} /> Email
-                  </a>
+                {faculty.email && (
+                  <EmailPopup email={faculty.email}>
+                    <Mail size={8} strokeWidth={1.5} />
+                  </EmailPopup>
                 )}
               </div>
       </div>
@@ -149,15 +154,10 @@ function LeadershipCard({ leader }: { leader: typeof leadershipTeam[0] }) {
               <Linkedin size={10} strokeWidth={1.5} /> LinkedIn
             </a>
           )}
-          {leader.emailLink && (
-            <a
-              href={leader.emailLink}
-              onClick={(e) => e.stopPropagation()}
-              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded bg-gold/10 text-[10px] font-sans font-medium leading-none text-gold/80 hover:bg-gold hover:text-maroon-dark transition-all"
-              aria-label={`Email ${leader.name}`}
-            >
-              <Mail size={10} strokeWidth={1.5} /> Email
-            </a>
+          {leader.email && (
+            <EmailPopup email={leader.email}>
+              <Mail size={10} strokeWidth={1.5} />
+            </EmailPopup>
           )}
         </div>
       </div>
@@ -176,6 +176,7 @@ export function FacultyPage() {
     if (activeFilter === 'Professors') return matchesSearch && l.title === 'Professor'
     if (activeFilter === 'Associate Professors') return matchesSearch && l.title === 'Associate Professor'
     if (activeFilter === 'Assistant Professors') return matchesSearch && l.title === 'Assistant Professor'
+    if (activeFilter === 'Academic Support') return matchesSearch && l.title.toLowerCase().includes('academic support')
     return matchesSearch
   })
 

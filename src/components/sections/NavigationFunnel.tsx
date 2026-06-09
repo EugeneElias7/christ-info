@@ -2,13 +2,13 @@ import { motion } from 'framer-motion';
 import { GraduationCap, FlaskConical, Microscope, Trophy, Calendar, Briefcase, ArrowRight } from 'lucide-react';
 import { getMotionVariants, fadeInUp, staggerContainer } from '../../lib/animations';
 
-const csIcons = [
-  { icon: GraduationCap, label: 'Academics' },
-  { icon: FlaskConical,  label: 'Labs' },
-  { icon: Microscope,    label: 'Research' },
-  { icon: Trophy,        label: 'Achievements' },
-  { icon: Calendar,      label: 'Events' },
-  { icon: Briefcase,     label: 'Placements' },
+const csHighlights = [
+  { icon: GraduationCap, label: 'Industry-Focused Curriculum' },
+  { icon: FlaskConical,  label: 'Cutting-Edge Lab' },
+  { icon: Microscope,    label: 'Impactful Research' },
+  { icon: Trophy,        label: 'Encouraging Achievements' },
+  { icon: Calendar,      label: 'Result-Oriented Events' },
+  { icon: Briefcase,     label: 'Support for Placements' },
 ] as const;
 
 export function NavigationFunnel() {
@@ -39,8 +39,8 @@ export function NavigationFunnel() {
                 <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/50 to-transparent" />
               </div>
               <div className="p-card-p flex flex-col flex-1">
-                <p className="text-eyebrow font-sans text-gold tracking-widest uppercase mb-1">Explore</p>
-                <h2 className="text-heading font-serif text-maroon leading-tight mb-1">CHRIST University</h2>
+                <p className="text-eyebrow font-sans text-gold tracking-widest uppercase mb-1">University</p>
+                <h2 className="text-heading font-serif text-maroon leading-tight mb-1">CHRIST (Deemed to be University) </h2>
                 <p className="text-body-sm font-sans text-charcoal/60 flex-1 mb-4">
                   Discover our legacy of excellence, holistic education, and value-based learning since 1969.
                 </p>
@@ -70,10 +70,10 @@ export function NavigationFunnel() {
                 <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/50 to-transparent" />
               </div>
               <div className="p-card-p flex flex-col flex-1">
-                <p className="text-eyebrow font-sans text-gold tracking-widest uppercase mb-1">Explore</p>
-                <h2 className="text-heading font-serif text-maroon leading-tight mb-1">Yeshwantpur Campus</h2>
+                <p className="text-eyebrow font-sans text-gold tracking-widest uppercase mb-1">Campus</p>
+                <h2 className="text-heading font-serif text-maroon leading-tight mb-1">Banglore Yeshwantpur Campus (BYC)</h2>
                 <p className="text-body-sm font-sans text-charcoal/60 flex-1 mb-4">
-                  Your home for innovation, collaboration, and cutting-edge technology education.
+                  A Joyful and Caring Campus for innovation, collaboration, and cutting-edge technology education.
                 </p>
                 <a
                   href="https://byc.christuniversity.in/"
@@ -98,20 +98,20 @@ export function NavigationFunnel() {
                       Computer Science
                     </h2>
                     <p className="text-body-sm font-sans text-charcoal/60 leading-relaxed max-w-xs">
-                      Empowering students with cutting-edge knowledge, world-class faculty, and a culture of excellence.
+                      Empowering students with technical knowledge, societal commitment, and a pursuit of excellence through the mentorship of dedicated faculty.
                     </p>
                   </div>
 
                   <div className="hidden lg:block w-px h-20 bg-cream-border flex-shrink-0" />
 
                   <div className="flex-1 min-w-0 mb-5 lg:mb-0">
-                    <div className="grid grid-cols-3 sm:grid-cols-6 gap-1.5">
-                      {csIcons.map((item) => {
-                        const IconComponent = item.icon;
+                    <div className="flex flex-wrap gap-2">
+                      {csHighlights.map((item) => {
+                        const Icon = item.icon;
                         return (
-                          <div key={item.label} className="flex flex-col items-center gap-0.5 py-2 px-1 rounded-card bg-charcoal/[0.03] border border-cream-border transition-all duration-250 hover:border-gold/30 hover:bg-gold/[0.03]">
-                            <IconComponent size={14} strokeWidth={1.5} className="text-gold/60" />
-                            <span className="text-[9px] font-sans font-medium text-charcoal/50 text-center leading-tight">{item.label}</span>
+                          <div key={item.label} className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-gold/[0.06]">
+                            <Icon size={11} strokeWidth={1.5} className="text-gold/70" />
+                            <span className="text-[10px] font-sans text-charcoal/60 leading-tight">{item.label}</span>
                           </div>
                         );
                       })}

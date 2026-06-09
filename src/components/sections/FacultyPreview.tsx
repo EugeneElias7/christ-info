@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
-import { Linkedin, Mail, ExternalLink, ClipboardList } from 'lucide-react';
+import { Linkedin, Mail, ExternalLink, ClipboardList, MapPin } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { SectionWrapper } from '../ui/SectionWrapper';
+import { EmailPopup } from '../ui/EmailPopup';
 import { getMotionVariants, fadeInUp, staggerContainer, viewportLazy } from '../../lib/animations';
 import { facultyOnly } from '../../data/leadership';
 
@@ -60,6 +61,15 @@ function FacultyCard({ faculty }: { faculty: typeof facultyOnly[0] }) {
           </div>
         )}
 
+        {faculty.location && (
+          <div className="mt-2 pt-2 border-t border-dashed border-gold/20">
+            <div className="flex items-start gap-1.5">
+              <MapPin size={11} strokeWidth={1.5} className="text-gold/60 mt-0.5 shrink-0" />
+              <p className="text-[9px] font-sans text-charcoal/50 leading-relaxed">{faculty.location}</p>
+            </div>
+          </div>
+        )}
+
         <div className="flex items-center gap-1.5 mt-2 pt-2 border-t border-cream-border">
           {faculty.linkedin && (
             <a
@@ -73,15 +83,10 @@ function FacultyCard({ faculty }: { faculty: typeof facultyOnly[0] }) {
               <Linkedin size={8} strokeWidth={1.5} /> in
             </a>
           )}
-          {faculty.emailLink && (
-            <a
-              href={faculty.emailLink}
-              onClick={(e) => e.stopPropagation()}
-              className="flex items-center gap-1 px-2 py-1 rounded-[4px] bg-gold/10 text-gold/70 text-[8px] font-sans font-medium hover:bg-gold hover:text-maroon-dark transition-all"
-              aria-label={`Email ${faculty.name}`}
-            >
-              <Mail size={8} strokeWidth={1.5} /> @
-            </a>
+          {faculty.email && (
+            <EmailPopup email={faculty.email}>
+              <Mail size={8} strokeWidth={1.5} />
+            </EmailPopup>
           )}
         </div>
       </div>
