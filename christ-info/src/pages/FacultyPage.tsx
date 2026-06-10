@@ -5,6 +5,16 @@ import { facultyOnly, leadershipTeam } from '../data/leadership'
 import { getMotionVariants, fadeInUp, staggerContainer } from '../lib/animations'
 import { EmailPopup } from '../components/ui/EmailPopup'
 import dayanaImage from '../assets/images/dayana-david.webp'
+import krishnaImage from '../assets/images/krishna-presannakumar.webp'
+import mithunImage from '../assets/images/mithun-d-souza.webp'
+import kousalyaImage from '../assets/images/kousalya-r.webp'
+
+const localImages: Record<string, string> = {
+  'Dayana David': dayanaImage,
+  'Krishna Presannakumar': krishnaImage,
+  'Mithun D Souza': mithunImage,
+  'Kousalya R': kousalyaImage,
+}
 
 const filters = ['All', 'Professors', 'Associate Professors', 'Assistant Professors', 'Academic Support'] as const
 
@@ -21,7 +31,7 @@ function FacultyCard({ faculty }: { faculty: typeof facultyOnly[0] }) {
     >
       <div className="relative overflow-hidden">
         {(() => {
-          const src = faculty.name === 'Dayana David' ? dayanaImage : faculty.imageUrl
+          const src = localImages[faculty.name] ?? faculty.imageUrl
           return src && !imgError
             ? <img src={src} alt={faculty.name} className="aspect-[4/5] w-full object-cover transition-transform duration-350 ease-smooth group-hover:scale-105" loading="lazy" onError={() => setImgError(true)} />
             : <div className="aspect-[4/5] bg-gradient-to-br from-charcoal via-charcoal-mid to-charcoal/90 flex items-center justify-center transition-transform duration-350 ease-smooth group-hover:scale-105"><div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,160,23,0.06),transparent_60%)]" /><span className="text-2xl font-serif font-bold text-white/10 tracking-wider select-none">{faculty.imagePlaceholder}</span></div>
@@ -101,9 +111,9 @@ function LeadershipCard({ leader }: { leader: typeof leadershipTeam[0] }) {
       {/* Portrait frame */}
       <div className="px-5 pt-6 pb-2 bg-gradient-to-b from-cream to-cream/50">
         <div className="relative overflow-hidden rounded-lg shadow-[0_4px_20px_-4px_rgba(0,0,0,0.12)] ring-1 ring-black/5">
-          {leader.imageUrl ? (
+          {(localImages[leader.name] || leader.imageUrl) ? (
             <img
-              src={leader.imageUrl}
+              src={localImages[leader.name] ?? leader.imageUrl}
               alt={leader.name}
               className="aspect-[4/5] w-full object-cover transition-transform duration-400 ease-smooth group-hover:scale-105"
             />

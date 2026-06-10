@@ -53,9 +53,20 @@ export function SocialSidebar() {
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
+      {/* Mobile open tab — always ChevronLeft, hidden on desktop */}
       <div
-        className={`flex flex-col items-center transition-all duration-400 ease-out ${
-          open ? 'translate-x-0' : 'translate-x-[calc(100%-28px)]'
+        onClick={(e) => { e.stopPropagation(); setOpen(true) }}
+        className={`lg:hidden absolute right-0 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-5 h-10 bg-white border border-cream-border rounded-br-sm cursor-pointer transition-all duration-400 hover:bg-gold/10 shadow-card-white ${open ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
+      >
+        <ChevronLeft size={10} strokeWidth={1.5} className="text-charcoal/40" />
+      </div>
+
+      {/* Panel — desktop peeks 28px, mobile slides fully */}
+      <div
+        className={`transition-all duration-400 ease-out ${
+          open
+            ? 'translate-x-0'
+            : 'lg:translate-x-[calc(100%-28px)] translate-x-full'
         }`}
       >
         <div className="bg-white border border-cream-border rounded-l-card-lg shadow-card-white py-2 px-1.5">
@@ -77,14 +88,15 @@ export function SocialSidebar() {
               </a>
             ))}
           </div>
-        </div>
-        <div
-          onClick={() => setOpen(prev => !prev)}
-          className={`flex items-center justify-center w-5 h-10 bg-white border border-l-0 border-t-0 border-cream-border rounded-br-sm cursor-pointer transition-all duration-400 hover:bg-gold/10 ${
-            open ? 'opacity-100 pointer-events-auto' : 'opacity-100'
-          }`}
-        >
-          {open ? <X size={10} strokeWidth={1.5} className="text-charcoal/40 hover:text-charcoal/40" /> : <ChevronLeft size={10} strokeWidth={1.5} className="text-charcoal/40 hover:text-charcoal/40" />}
+          {/* Mobile close button — inside panel at the bottom */}
+          <div className="lg:hidden flex justify-center pt-1.5 mt-1.5 border-t border-cream-border">
+            <div
+              onClick={() => setOpen(false)}
+              className="w-5 h-5 rounded-full flex items-center justify-center cursor-pointer transition-all duration-250 hover:bg-gold/10"
+            >
+              <X size={10} strokeWidth={1.5} className="text-charcoal/40" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
