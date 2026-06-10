@@ -4,7 +4,7 @@ import { Search, Linkedin, Mail, ExternalLink, ClipboardList, MapPin, FileText, 
 import { facultyOnly, leadershipTeam } from '../data/leadership'
 import { getMotionVariants, fadeInUp, staggerContainer } from '../lib/animations'
 import { EmailPopup } from '../components/ui/EmailPopup'
-import dayanaImage from '../assets/images/dayana david.png'
+import dayanaImage from '../assets/images/dayana-david.webp'
 
 const filters = ['All', 'Professors', 'Associate Professors', 'Assistant Professors', 'Academic Support'] as const
 

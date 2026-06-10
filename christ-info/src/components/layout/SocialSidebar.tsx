@@ -84,7 +84,7 @@ export function SocialSidebar() {
             open ? 'opacity-100 pointer-events-auto' : 'opacity-100'
           }`}
         >
-          {open ? <X size={10} strokeWidth={1.5} className="text-charcoal/40" /> : <ChevronLeft size={10} strokeWidth={1.5} className="text-charcoal/40" />}
+          {open ? <X size={10} strokeWidth={1.5} className="text-charcoal/40 hover:text-charcoal/40" /> : <ChevronLeft size={10} strokeWidth={1.5} className="text-charcoal/40 hover:text-charcoal/40" />}
         </div>
       </div>
     </div>

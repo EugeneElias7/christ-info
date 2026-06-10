@@ -1,11 +1,10 @@
 import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { X, MapPin, Mail, Award, BookOpen, Globe, Users, GraduationCap, Briefcase, Microscope, Target, Sparkles } from 'lucide-react'
+import { X, MapPin, Award, BookOpen, Globe, Users, GraduationCap, Briefcase, Microscope, Target, Sparkles } from 'lucide-react'
 import { getMotionVariants, fadeInUp, staggerContainer, viewportLazy } from '../lib/animations'
 import { SectionWrapper } from '../components/ui/SectionWrapper'
-import { EmailPopup } from '../components/ui/EmailPopup'
 import {
-  harmonyStats, harmonyCoordinators, harmonyWings,
+  harmonyStats, harmonyWings,
   inheritanceOutcomes, archiveHighlights,
   certificationProviders, skillsCategories,
   internationalHighlights,
@@ -256,44 +255,7 @@ export function HarmonyPage() {
         </div>
       </motion.div>
 
-      {/* Coordinators */}
-      <SectionWrapper background="cream" ariaLabel="Coordinators">
-        <motion.div
-          variants={getMotionVariants(staggerContainer)}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportLazy}
-        >
-          <div className="text-center mb-8">
-            <p className="text-eyebrow font-sans text-gold tracking-widest uppercase mb-2">Programme Team</p>
-            <h2 className="text-display-sm font-serif text-maroon">Coordinators</h2>
-          </div>
-          <div className="flex flex-wrap justify-center gap-5">
-            {harmonyCoordinators.map((c, i) => (
-              <motion.div
-                key={c.name}
-                variants={getMotionVariants(fadeInUp)}
-                transition={{ delay: i * 0.08 }}
-                className="bg-white border border-cream-border rounded-card-lg shadow-card-white px-5 py-4 w-[220px] text-center hover:border-gold/30 hover:shadow-card-hover transition-all duration-300"
-              >
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-maroon to-charcoal flex items-center justify-center mx-auto mb-3">
-                  <span className="text-sm font-serif font-bold text-gold">
-                    {c.name.split(' ').filter(w => w.startsWith('Dr.') ? false : true).map(w => w[0]).join('').slice(0, 2)}
-                  </span>
-                </div>
-                <h3 className="text-body font-serif font-semibold text-maroon leading-tight">{c.name}</h3>
-                <p className="text-[10px] font-sans text-charcoal/50 mt-0.5">{c.title}</p>
-                <div className="flex flex-col items-center gap-1 mt-2">
-                  <EmailPopup email={c.email}>
-                    <Mail size={10} strokeWidth={1.5} />
-                    <span className="text-[9px]">{c.email}</span>
-                  </EmailPopup>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-      </SectionWrapper>
+
 
       {/* Harmony Wings */}
       <SectionWrapper background="cream-muted" ariaLabel="Harmony Wings">
