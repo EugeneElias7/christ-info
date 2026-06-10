@@ -58,7 +58,7 @@ export function SocialSidebar() {
           open ? 'translate-x-0' : 'translate-x-[calc(100%-28px)]'
         }`}
       >
-        <div className="bg-white/95 backdrop-blur-sm border border-cream-border rounded-l-card-lg shadow-card-white py-2 px-1.5">
+        <div className="bg-white border border-cream-border rounded-l-card-lg shadow-card-white py-2 px-1.5">
           <div className="flex flex-col gap-1.5">
             {socialLinks.map(({ label, href, icon }) => (
               <a
@@ -80,7 +80,7 @@ export function SocialSidebar() {
         </div>
         <div
           onClick={() => setOpen(prev => !prev)}
-          className={`flex items-center justify-center w-5 h-10 bg-white/95 backdrop-blur-sm border border-l-0 border-t-0 border-cream-border rounded-br-sm cursor-pointer transition-all duration-400 hover:bg-gold/10 ${
+          className={`flex items-center justify-center w-5 h-10 bg-white border border-l-0 border-t-0 border-cream-border rounded-br-sm cursor-pointer transition-all duration-400 hover:bg-gold/10 ${
             open ? 'opacity-100 pointer-events-auto' : 'opacity-100'
           }`}
         >
