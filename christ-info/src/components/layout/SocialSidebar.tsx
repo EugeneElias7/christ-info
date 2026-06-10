@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ChevronLeft } from 'lucide-react'
+import { ChevronLeft, X } from 'lucide-react'
 
 const socialLinks = [
   {
@@ -45,17 +45,17 @@ const socialLinks = [
 ]
 
 export function SocialSidebar() {
-  const [hovered, setHovered] = useState(false)
+  const [open, setOpen] = useState(false)
 
   return (
     <div
       className="fixed right-0 top-1/2 -translate-y-1/2 z-[60] block"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
     >
       <div
         className={`flex flex-col items-center transition-all duration-400 ease-out ${
-          hovered ? 'translate-x-0' : 'translate-x-[calc(100%-28px)]'
+          open ? 'translate-x-0' : 'translate-x-[calc(100%-28px)]'
         }`}
       >
         <div className="bg-white/95 backdrop-blur-sm border border-cream-border rounded-l-card-lg shadow-card-white py-2 px-1.5">
@@ -67,6 +67,7 @@ export function SocialSidebar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
+                onClick={() => setOpen(false)}
                 className="group/icon relative w-7 h-7 rounded-lg flex items-center justify-center transition-all duration-250 hover:scale-110 hover:shadow-sm"
               >
                 {icon}
@@ -78,11 +79,12 @@ export function SocialSidebar() {
           </div>
         </div>
         <div
-          className={`flex items-center justify-center w-5 h-10 bg-white/95 backdrop-blur-sm border border-l-0 border-t-0 border-cream-border rounded-br-sm cursor-pointer transition-all duration-400 ${
-            hovered ? 'opacity-0 pointer-events-none' : 'opacity-100'
+          onClick={() => setOpen(prev => !prev)}
+          className={`flex items-center justify-center w-5 h-10 bg-white/95 backdrop-blur-sm border border-l-0 border-t-0 border-cream-border rounded-br-sm cursor-pointer transition-all duration-400 hover:bg-gold/10 ${
+            open ? 'opacity-100 pointer-events-auto' : 'opacity-100'
           }`}
         >
-          <ChevronLeft size={10} strokeWidth={1.5} className="text-charcoal/40" />
+          {open ? <X size={10} strokeWidth={1.5} className="text-charcoal/40" /> : <ChevronLeft size={10} strokeWidth={1.5} className="text-charcoal/40" />}
         </div>
       </div>
     </div>

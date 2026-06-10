@@ -4,6 +4,7 @@ import { Search, Linkedin, Mail, ExternalLink, ClipboardList, MapPin, FileText, 
 import { facultyOnly, leadershipTeam } from '../data/leadership'
 import { getMotionVariants, fadeInUp, staggerContainer } from '../lib/animations'
 import { EmailPopup } from '../components/ui/EmailPopup'
+import dayanaImage from '../assets/images/dayana david.png'
 
 const filters = ['All', 'Professors', 'Associate Professors', 'Assistant Professors', 'Academic Support'] as const
 
@@ -19,20 +20,12 @@ function FacultyCard({ faculty }: { faculty: typeof facultyOnly[0] }) {
       className="group block bg-white border border-cream-border rounded-card-lg shadow-card-white overflow-hidden cursor-pointer transition-all duration-350 ease-smooth hover:border-gold/40 hover:shadow-card-hover hover:-translate-y-1.5"
     >
       <div className="relative overflow-hidden">
-        {faculty.imageUrl && !imgError ? (
-          <img
-            src={faculty.imageUrl}
-            alt={faculty.name}
-            className="aspect-[4/5] w-full object-cover transition-transform duration-350 ease-smooth group-hover:scale-105"
-            loading="lazy"
-            onError={() => setImgError(true)}
-          />
-        ) : (
-          <div className="aspect-[4/5] bg-gradient-to-br from-charcoal via-charcoal-mid to-charcoal/90 flex items-center justify-center transition-transform duration-350 ease-smooth group-hover:scale-105">
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,160,23,0.06),transparent_60%)]" />
-            <span className="text-2xl font-serif font-bold text-white/10 tracking-wider select-none">{faculty.imagePlaceholder}</span>
-          </div>
-        )}
+        {(() => {
+          const src = faculty.name === 'Dayana David' ? dayanaImage : faculty.imageUrl
+          return src && !imgError
+            ? <img src={src} alt={faculty.name} className="aspect-[4/5] w-full object-cover transition-transform duration-350 ease-smooth group-hover:scale-105" loading="lazy" onError={() => setImgError(true)} />
+            : <div className="aspect-[4/5] bg-gradient-to-br from-charcoal via-charcoal-mid to-charcoal/90 flex items-center justify-center transition-transform duration-350 ease-smooth group-hover:scale-105"><div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,160,23,0.06),transparent_60%)]" /><span className="text-2xl font-serif font-bold text-white/10 tracking-wider select-none">{faculty.imagePlaceholder}</span></div>
+        })()}
 
         <div className="absolute inset-0 bg-gradient-to-t from-maroon/80 via-maroon/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         <div className="absolute inset-0 ring-[2px] ring-transparent group-hover:ring-gold/40 rounded-[inherit] transition-all duration-350 pointer-events-none" />
