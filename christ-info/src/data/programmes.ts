@@ -125,7 +125,7 @@ export const programmes: Programme[] = [
     icon: 'Shield',
     exploreUrl: 'https://christuniversity.in//courses/NjM5',
     sections: [
-      { name: '1 MSc AICS', roomNo: 'B219', classTeacher: 'Kavitha S', strength: 65, floor: 'Second Floor' },
+      { name: '1 MSc AI & CS', roomNo: 'B219', classTeacher: 'Kavitha S', strength: 65, floor: 'Second Floor' },
     ],
     highlights: [
       {
