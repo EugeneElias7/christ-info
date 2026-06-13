@@ -128,15 +128,15 @@ export const afterHourInfo = {
 
 export const afterHourWings: AfterHourWing[] = [
   {
-    id: 'street',
-    name: 'Street',
-    tagline: 'Street Theatre & Public Performance',
+    id: 'dance',
+    name: 'Dance',
+    tagline: 'Dance & Choreography',
     description:
-      'The Street wing of After Hour Productions specializes in street theatre, public performances, and socially relevant dramatic presentations. The team engages audiences through impactful storytelling in open spaces, addressing contemporary themes and social issues.',
+      'The Dance wing of After Hour Productions specializes in choreography, dance performances, and rhythmic storytelling across various styles including contemporary, classical, hip-hop, and fusion. The team captivates audiences through expressive movement and synchronized performances.',
     performanceHighlights: [
-      'Street plays at inter-collegiate fests across Karnataka',
-      'Social awareness performances in public spaces',
-      'Improv theatre showcases at campus events',
+      'Dance performances at inter-collegiate fests across Karnataka',
+      'Choreography showcases at university cultural events',
+      'Fusion dance productions blending traditional and modern styles',
     ],
     facultyCoordinator: { name: 'Faculty Coordinator', email: '' },
   },
