@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { getMotionVariants, fadeInUp, viewportLazy } from '../lib/animations'
-import intelLogo from '../assets/images/intel-header-logo.svg'
+import intelLogo from '../assets/certifications/intel-header-logo.svg'
 
 const providers = [
   { name: 'Infosys Springboard', logo: 'https://infyspringboard.onwingspan.com/web/assets/images/infosysheadstart/app_logos/landing-new.png', bg: '' },

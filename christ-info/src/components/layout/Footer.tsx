@@ -2,7 +2,7 @@ import { Linkedin, Instagram, Youtube, Twitter, Facebook, Smartphone, FileText, 
 import { useNavigate, useLocation } from 'react-router-dom';
 import { footerColumns } from '../../data/navigation';
 import { scrollToSection } from '../../lib/utils';
-import departmentLogo from '../../assets/images/department-Logo.png';
+import departmentLogo from '../../assets/images/department-Logo.png'
 
 const socialIcons = [
   { icon: Linkedin, href: 'https://www.linkedin.com/in/computer-science-yeshwanthpur-cs-byc-christ-university-75b423371/', label: 'LinkedIn' },

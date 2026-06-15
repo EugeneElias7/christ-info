@@ -2,6 +2,7 @@ import rawData from './faculty-data.json';
 
 export interface Leader {
   id: string;
+  slug: string;
   name: string;
   title: string;
   designation: string;
@@ -29,6 +30,7 @@ function facultyByName(name: string) {
 const hodRaw = rawData.faculty.find(f => f.roles.includes('hod'));
 const hod = hodRaw ? {
   id: 'hod',
+  slug: hodRaw.slug,
   name: hodRaw.name,
   title: 'Head of Department',
   designation: 'Head of Department',
@@ -46,6 +48,7 @@ const hod = hodRaw ? {
 const assocHodRaw = rawData.faculty.find(f => f.roles.includes('assochod'));
 const assocHod = assocHodRaw ? {
   id: 'assoc-hod',
+  slug: assocHodRaw.slug,
   name: assocHodRaw.name,
   title: 'Associate HOD',
   designation: 'Associate Head of Department',
@@ -68,6 +71,7 @@ const programCoordinators = rawData.leadership
     const facultyMatch = facultyByName(l.name);
     return {
       id: l.id,
+      slug: facultyMatch?.slug || l.id,
       name: l.name,
       title: l.designation,
       designation: l.designation,
@@ -90,6 +94,7 @@ const campusLeadership = rawData.leadership
     const facultyMatch = facultyByName(l.name);
     return {
       id: l.id,
+      slug: facultyMatch?.slug || l.id,
       name: l.name,
       title: l.designation,
       designation: l.designation,
@@ -116,6 +121,7 @@ const otherFaculty = rawData.faculty.filter(f =>
   return 0;
 }).map(f => ({
   id: `faculty-${f.facultyId}`,
+  slug: f.slug,
   name: f.name,
   title: f.designation,
   designation: f.designation,

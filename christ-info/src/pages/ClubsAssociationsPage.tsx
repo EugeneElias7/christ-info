@@ -11,15 +11,15 @@ import {
 } from '../data/samagra'
 import type { WingDetail, AfterHourWing } from '../data/samagra'
 
-import samagraLogo from '../assets/images/samagra logo.png'
-import techRevampImg from '../assets/images/Tech Revamp.png'
-import vaultVortexImg from '../assets/images/Vault Vortex.png'
-import shieldImg from '../assets/images/SHIELD.png'
-import vizerionImg from '../assets/images/Vizerion.png'
-import offTopicImg from '../assets/images/OF(F) Topic.png'
-import cscSocImg from '../assets/images/CSC SOC.png'
-import wistImg from '../assets/images/WIST.png'
-import afterHourLogo from '../assets/images/afterhours Production logo.jpg'
+import samagraLogo from '../assets/clubs/samagra logo.png'
+import techRevampImg from '../assets/clubs/Tech Revamp.png'
+import vaultVortexImg from '../assets/clubs/Vault Vortex.png'
+import shieldImg from '../assets/clubs/SHIELD.png'
+import vizerionImg from '../assets/clubs/Vizerion.png'
+import offTopicImg from '../assets/clubs/OF(F) Topic.png'
+import cscSocImg from '../assets/clubs/CSC SOC.png'
+import wistImg from '../assets/clubs/WIST.png'
+import afterHourLogo from '../assets/clubs/afterhours Production logo.jpg'
 
 const samagraImages: Record<string, string> = {
   'vault-vortex': vaultVortexImg,

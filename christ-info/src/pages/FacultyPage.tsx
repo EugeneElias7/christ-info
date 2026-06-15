@@ -4,22 +4,27 @@ import { Search, Linkedin, Mail, ExternalLink, ClipboardList, MapPin, FileText, 
 import { facultyOnly, leadershipTeam } from '../data/leadership'
 import { getMotionVariants, fadeInUp, staggerContainer } from '../lib/animations'
 import { EmailPopup } from '../components/ui/EmailPopup'
-import dayanaImage from '../assets/images/dayana-david.webp'
-import krishnaImage from '../assets/images/krishna-presannakumar.webp'
-import mithunImage from '../assets/images/mithun-d-souza.webp'
-import kousalyaImage from '../assets/images/kousalya-r.webp'
 
-const localImages: Record<string, string> = {
-  'Dayana David': dayanaImage,
-  'Krishna Presannakumar': krishnaImage,
-  'Mithun D Souza': mithunImage,
-  'Kousalya R': kousalyaImage,
+const facultyImageModules = import.meta.glob<{ default: string }>('../assets/faculties/*.webp', { eager: true })
+
+const localImageBySlug: Record<string, string> = {}
+for (const [filepath, mod] of Object.entries(facultyImageModules)) {
+  const slug = (filepath.split('/').pop() || '').replace(/\.\w+$/, '')
+  localImageBySlug[slug] = mod.default
 }
+
+function getLocalImageSrc(slug: string | undefined): string | undefined {
+  return slug ? localImageBySlug[slug] : undefined
+}
+
+const alwaysLocalSlugs = new Set(['mithun-d-souza', 'krishna-presannakumar', 'kousalya-r', 'dayana-david'])
 
 const filters = ['All', 'Professors', 'Associate Professors', 'Assistant Professors', 'Academic Support'] as const
 
 function FacultyCard({ faculty }: { faculty: typeof facultyOnly[0] }) {
-  const [imgError, setImgError] = useState(false)
+  const [useLocal, setUseLocal] = useState(alwaysLocalSlugs.has(faculty.slug))
+  const localSrc = getLocalImageSrc(faculty.slug)
+  const src = useLocal ? localSrc : faculty.imageUrl
 
   return (
     <motion.a
@@ -30,12 +35,10 @@ function FacultyCard({ faculty }: { faculty: typeof facultyOnly[0] }) {
       className="group block bg-white border border-cream-border rounded-card-lg shadow-card-white overflow-hidden cursor-pointer transition-all duration-350 ease-smooth hover:border-gold/40 hover:shadow-card-hover hover:-translate-y-1.5"
     >
       <div className="relative overflow-hidden">
-        {(() => {
-          const src = localImages[faculty.name] ?? faculty.imageUrl
-          return src && !imgError
-            ? <img src={src} alt={faculty.name} className="aspect-[4/5] w-full object-cover transition-transform duration-350 ease-smooth group-hover:scale-105" loading="lazy" onError={() => setImgError(true)} />
-            : <div className="aspect-[4/5] bg-gradient-to-br from-charcoal via-charcoal-mid to-charcoal/90 flex items-center justify-center transition-transform duration-350 ease-smooth group-hover:scale-105"><div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,160,23,0.06),transparent_60%)]" /><span className="text-2xl font-serif font-bold text-white/10 tracking-wider select-none">{faculty.imagePlaceholder}</span></div>
-        })()}
+        {src
+          ? <img src={src} alt={faculty.name} className="aspect-[4/5] w-full object-cover transition-transform duration-350 ease-smooth group-hover:scale-105" loading="lazy" onError={() => { if (!useLocal && localSrc) setUseLocal(true) }} />
+          : <div className="aspect-[4/5] bg-gradient-to-br from-charcoal via-charcoal-mid to-charcoal/90 flex items-center justify-center transition-transform duration-350 ease-smooth group-hover:scale-105"><div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,160,23,0.06),transparent_60%)]" /><span className="text-2xl font-serif font-bold text-white/10 tracking-wider select-none">{faculty.imagePlaceholder}</span></div>
+        }
 
         <div className="absolute inset-0 bg-gradient-to-t from-maroon/80 via-maroon/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         <div className="absolute inset-0 ring-[2px] ring-transparent group-hover:ring-gold/40 rounded-[inherit] transition-all duration-350 pointer-events-none" />
@@ -97,6 +100,10 @@ function FacultyCard({ faculty }: { faculty: typeof facultyOnly[0] }) {
 }
 
 function LeadershipCard({ leader }: { leader: typeof leadershipTeam[0] }) {
+  const [useLocal, setUseLocal] = useState(false)
+  const localSrc = getLocalImageSrc(leader.slug)
+  const src = useLocal ? localSrc : leader.imageUrl
+
   return (
     <motion.a
       href={leader.profileUrl || undefined}
@@ -111,10 +118,11 @@ function LeadershipCard({ leader }: { leader: typeof leadershipTeam[0] }) {
       {/* Portrait frame */}
       <div className="px-5 pt-6 pb-2 bg-gradient-to-b from-cream to-cream/50">
         <div className="relative overflow-hidden rounded-lg shadow-[0_4px_20px_-4px_rgba(0,0,0,0.12)] ring-1 ring-black/5">
-          {(localImages[leader.name] || leader.imageUrl) ? (
+          {src ? (
             <img
-              src={localImages[leader.name] ?? leader.imageUrl}
+              src={src}
               alt={leader.name}
+              onError={() => { if (!useLocal && localSrc) setUseLocal(true) }}
               className="aspect-[4/5] w-full object-cover transition-transform duration-400 ease-smooth group-hover:scale-105"
             />
           ) : (
@@ -216,11 +224,42 @@ export function FacultyPage() {
           </div>
 
           <div className="relative sm:pr-[18rem]">
-            {/* Fade gradient indicator — only visible on mobile when content overflows */}
-            <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-10 z-[1] bg-gradient-to-l from-cream via-cream/90 to-transparent sm:hidden" />
-
+            {/* Mobile: two rows */}
+            <div className="flex flex-col gap-1.5 pt-1 sm:hidden">
+              <div className="flex gap-1.5">
+                {filters.slice(0, 3).map((f) => (
+                  <button
+                    key={f}
+                    onClick={() => setActiveFilter(f)}
+                    className={`px-3 py-1.5 rounded-card text-label-sm font-sans font-medium transition-all duration-250 ${
+                      activeFilter === f
+                        ? 'bg-maroon text-cream shadow-sm'
+                        : 'text-charcoal/50 hover:text-maroon hover:bg-maroon/5'
+                    }`}
+                  >
+                    {f}
+                  </button>
+                ))}
+              </div>
+              <div className="flex gap-1.5">
+                {filters.slice(3).map((f) => (
+                  <button
+                    key={f}
+                    onClick={() => setActiveFilter(f)}
+                    className={`px-3 py-1.5 rounded-card text-label-sm font-sans font-medium transition-all duration-250 ${
+                      activeFilter === f
+                        ? 'bg-maroon text-cream shadow-sm'
+                        : 'text-charcoal/50 hover:text-maroon hover:bg-maroon/5'
+                    }`}
+                  >
+                    {f}
+                  </button>
+                ))}
+              </div>
+            </div>
+            {/* Desktop: horizontal scroll */}
             <div
-              className="flex overflow-x-auto gap-1.5 pt-1 sm:pt-0 scroll-smooth whitespace-nowrap"
+              className="hidden sm:flex overflow-x-auto gap-1.5 pt-1 scroll-smooth whitespace-nowrap"
               style={{
                 scrollbarWidth: 'thin',
                 WebkitOverflowScrolling: 'touch',
